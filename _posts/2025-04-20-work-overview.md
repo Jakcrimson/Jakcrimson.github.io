@@ -3,9 +3,9 @@ title: Presentation - Work and Project Overview
 author:
   name: Pierre Lague
   link: 
-date: 2024-04-18 09:45:00 +0800
+date: 2025-04-18 09:45:00 +0800
 categories: [Studies, U-Lille,]
-tags: [RL]
+tags: [RL, Research]
 math: true
 mermaid: true
 image:
@@ -20,7 +20,7 @@ Any feedback is greatly appreciated. You can reach me at pierre.lague@protonmail
 
 <html>
   <body>
-    <iframe src="/assets/posts/thesis/Work and Project Overview - Pierre Lague.pdf" width="100%" height="800px">
+    <iframe src="/assets/posts/thesis/work_pr_overview.pdf" width="100%" height="800px">
     </iframe>
   </body>
 </html>
