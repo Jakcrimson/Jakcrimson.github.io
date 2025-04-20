@@ -3,7 +3,7 @@ title: Thesis - Load-balancing and Task Allocation in Dynamic Multi-Agent System
 author:
   name: Pierre Lague
   link: 
-date: 2024-03-31 09:45:00 +0800
+date: 2025-03-31 09:45:00 +0800
 categories: [Studies, U-Lille,]
 tags: [Python, ML, RL]
 math: true
