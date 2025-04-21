@@ -20,16 +20,16 @@ def fetch_stats(url):
         soup = BeautifulSoup(response.text, 'html.parser')
 
         stats = {
-            "rank": "N/A",
-            "solved": "N/A",
-            "streak": "N/A",
-            "fav_category": "N/A",
-            "score": "N/A",
+            "rank": "168",
+            "solved": "68",
+            "streak": "3",
+            "fav_category": "Machine Learning",
+            "score": "930",
             "avatar_url": "", # Add default empty string
-            "username": "",
-            "email": "",
-            "github_url": "",
-            "linkedin_url": "",
+            "username": "Jakcrimson",
+            "email": "pierre.lague@protonmail.com",
+            "github_url": "https://github.com/Jakcrimson",
+            "linkedin_url": "https://www.linkedin.com/in/pierre-lague-479344195/",
         }
 
         # --- Parsing Logic (IMPORTANT: This might break if deep-ml.com changes layout) ---
