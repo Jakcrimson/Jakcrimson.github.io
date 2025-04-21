@@ -42,13 +42,13 @@ def fetch_stats(url):
 
         # Extract basic info
         avatar_img = profile_div.find('img', alt='Jakcrimson') # Use the alt text you expect
-        stats['avatar_url'] = avatar_img['src'] if avatar_img else 'DEFAULT_AVATAR_URL' # Provide a default
+        stats['avatar_url'] = avatar_img['src'] if avatar_img else 'assets/img/avatar.png' # Provide a default
 
         username_h2 = profile_div.find('h2', class_='text-xl')
-        stats['username'] = username_h2.text.strip() if username_h2 else 'Your Username'
+        stats['username'] = username_h2.text.strip() if username_h2 else 'Jakcrimson'
 
         email_p = profile_div.find('p', class_='text-sm text-zinc-400')
-        stats['email'] = email_p.text.strip() if email_p else 'your.email@example.com'
+        stats['email'] = email_p.text.strip() if email_p else 'pierre.lague@protonmail.com'
 
         # Extract Rank
         rank_div = profile_div.find('div', class_='flex items-center mt-1')
@@ -112,7 +112,7 @@ def generate_new_readme(stats, readme_content):
         return readme_content # Return original content if stats fetching failed
 
     # Format the streak correctly
-    streak_text = f"{stats.get('streak', '0')} days"
+    streak_text = f"{stats.get('streak', '3')} days"
 
     # Build the new stats table HTML
     # Important: Keep this structure consistent with your README placeholders
@@ -123,17 +123,17 @@ def generate_new_readme(stats, readme_content):
       <table width="100%">
         <tr>
           <td width="70px" valign="top">
-            <img src="{stats.get('avatar_url', '')}" alt="{stats.get('username', 'User')}" width="64" height="64" style="border-radius: 50%; border: 2px solid #525252;" />
+            <img src="{stats.get('avatar_url', '')}" alt="{stats.get('username', 'Jakcrimson')}" width="64" height="64" style="border-radius: 50%; border: 2px solid #525252;" />
           </td>
           <td valign="top" style="padding-left: 10px;">
-            <h2 style="margin: 0; color: #f5f5f5; font-size: 1.25rem; font-weight: 500;">{stats.get('username', 'Username')}</h2>
-            <p style="margin: 0; font-size: 0.875rem; color: #a3a3a3;">{stats.get('email', '')}</p>
+            <h2 style="margin: 0; color: #f5f5f5; font-size: 1.25rem; font-weight: 500;">{stats.get('username', 'Jakcrimson')}</h2>
+            <p style="margin: 0; font-size: 0.875rem; color: #a3a3a3;">{stats.get('email', 'pierre.lague@protonmail.com')}</p>
             <p style="margin: 5px 0 0 0; font-size: 0.75rem; color: #a3a3a3;">
-              🏆 Rank #{stats.get('rank', 'N/A')}
+              🏆 Rank #{stats.get('rank', '168')}
             </p>
             <p style="margin: 10px 0 0 0;">
-              <a href="{stats.get('github_url', '#')}" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="display: inline-block; padding: 5px; background-color: #3f3f46; border-radius: 6px; margin-right: 5px; line-height: 0;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="16" height="16" alt="GitHub"/></a>
-              <a href="{stats.get('linkedin_url', '#')}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display: inline-block; padding: 5px; background-color: #3f3f46; border-radius: 6px; margin-right: 5px; line-height: 0;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-plain.svg" width="16" height="16" alt="LinkedIn"/></a>
+              <a href="{stats.get('github_url', 'https://github.com/Jakcrimson')}" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="display: inline-block; padding: 5px; background-color: #3f3f46; border-radius: 6px; margin-right: 5px; line-height: 0;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="16" height="16" alt="GitHub"/></a>
+              <a href="{stats.get('linkedin_url', 'https://www.linkedin.com/in/pierre-lague-479344195/')}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display: inline-block; padding: 5px; background-color: #3f3f46; border-radius: 6px; margin-right: 5px; line-height: 0;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-plain.svg" width="16" height="16" alt="LinkedIn"/></a>
             </p>
           </td>
         </tr>
@@ -143,7 +143,7 @@ def generate_new_readme(stats, readme_content):
   <tr>
     <td align="center" style="border: 1px solid #3f3f46; background-color: #3a3a3a; border-radius: 10px; padding: 10px; margin: 5px;">
       <div style="color: #a3a3a3; font-size: 0.75rem; margin-bottom: 4px;">🏅 Problems Solved</div>
-      <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">{stats.get('solved', 'N/A')}</div>
+      <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">{stats.get('solved', '68')}</div>
     </td>
     <td align="center" style="border: 1px solid #3f3f46; background-color: #3a3a3a; border-radius: 10px; padding: 10px; margin: 5px;">
        <div style="color: #a3a3a3; font-size: 0.75rem; margin-bottom: 4px;">🔥 Current Streak</div>
@@ -153,11 +153,11 @@ def generate_new_readme(stats, readme_content):
   <tr>
     <td align="center" style="border: 1px solid #3f3f46; background-color: #3a3a3a; border-radius: 10px; padding: 10px; margin: 5px;">
       <div style="color: #a3a3a3; font-size: 0.75rem; margin-bottom: 4px;">⭐ Favorite Category</div>
-      <div style="color: #f5f5f5; font-size: 0.875rem; font-weight: 500;">{stats.get('fav_category', 'N/A')}</div>
+      <div style="color: #f5f5f5; font-size: 0.875rem; font-weight: 500;">{stats.get('fav_category', 'Machine Learning')}</div>
     </td>
     <td align="center" style="border: 1px solid #3f3f46; background-color: #3a3a3a; border-radius: 10px; padding: 10px; margin: 5px;">
        <div style="color: #a3a3a3; font-size: 0.75rem; margin-bottom: 4px;">💥 Score</div>
-       <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">{stats.get('score', 'N/A')}</div>
+       <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">{stats.get('score', '930')}</div>
     </td>
   </tr>
 </table>
