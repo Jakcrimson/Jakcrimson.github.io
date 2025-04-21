@@ -34,7 +34,7 @@ order: 5
       <table width="100%">
         <tr>
           <td width="70px" valign="top">
-            <img src="YOUR_AVATAR_URL" alt="Jakcrimson" width="64" height="64" style="border-radius: 50%; border: 2px solid #525252;" />
+            <img src="/assets/img/avatar.jpg" alt="Jakcrimson" width="64" height="64" style="border-radius: 50%; border: 2px solid #525252;" />
           </td>
           <td valign="top" style="padding-left: 10px;">
             <h2 style="margin: 0; color: #f5f5f5; font-size: 1.25rem; font-weight: 500;">Jakcrimson</h2>
