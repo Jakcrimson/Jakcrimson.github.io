@@ -2,51 +2,58 @@ name: Update Deep-ML Stats in README
 
 on:
   schedule:
-    # Runs every day at 08:00 UTC. Adjust the cron schedule as needed.
-    # See: https://crontab.guru/
-    - cron: '0 8 * * *'
-  workflow_dispatch: # Allows manual triggering from the Actions tab
+    - cron: '0 8 * * *' # Runs daily at 8 AM UTC (adjust as needed)
+  workflow_dispatch: # Allows manual run
 
 jobs:
   update-stats:
     runs-on: ubuntu-latest
     permissions:
-      # Give the workflow contents write permission to commit to the repo
-      contents: write
+      contents: write # Needed to commit back to the repo
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4 # Checks out your repository code
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10' # Specify Python version
+          python-version: '3.10' # Or your preferred Python version
 
-      - name: Install dependencies
+      # Install Chrome for Selenium headless mode
+      - name: Install Google Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget gnupg fonts-liberation # Added fonts-liberation, sometimes needed
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          google-chrome --version
+
+      - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Run update script
-        # Optional: Pass the profile URL as an environment variable if you want to make it configurable
-        # env:
-        #   PROFILE_URL: "https://www.deep-ml.com/profile/Y5llgZoBWpPVmkyEw0guauFb8IG2"
+      - name: Run update script (using Selenium)
         run: python update_deepml_stats.py
 
       - name: Commit and push changes
         run: |
-          git config --global user.name 'github-actions[bot]' # Use the Actions bot user
+          git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          # Check if README.md was modified
+          # Check if README.md was actually modified by the script
           if git diff --quiet README.md; then
-            echo "No changes to commit."
+            echo "No changes detected in README.md by git."
             exit 0 # Exit cleanly if no changes
           fi
+          echo "Changes detected in README.md, proceeding with commit."
           git add README.md
-          git commit -m "Automated update: Deep-ML stats"
+          git commit -m "Automated update: Deep-ML stats [skip ci]" # Added [skip ci] to prevent triggering other actions
           # Add error handling for the push
           if git push; then
             echo "Changes pushed successfully."
           else
-            echo "Failed to push changes. Maybe the branch is protected or credentials issue?"
+            echo "Failed to push changes. Check permissions or branch protection rules."
+            # Attempt to reset if push failed to avoid merge conflicts on next run? Risky.
+            # git reset --hard HEAD~1
             exit 1 # Exit with error if push fails
           fi
-        # Optional: Add specific error handling or notifications here if push fails

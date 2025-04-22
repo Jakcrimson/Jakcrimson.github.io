@@ -27,24 +27,24 @@ order: 5
 ## 🔭 Deep-ML Stats
 
 <!-- START_DEEPML_STATS -->
-<!-- This table will be automatically updated by a GitHub Action -->
+
 <table align="center" width="350px" style="border: 1px solid #404040; border-radius: 12px; background-color: #262626; padding: 15px;">
   <tr>
     <td colspan="2">
       <table width="100%">
         <tr>
           <td width="70px" valign="top">
-            <img src="/assets/img/avatar.jpg" alt="Jakcrimson" width="64" height="64" style="border-radius: 50%; border: 2px solid #525252;" />
+            <img src="assets/img/avatar.png" alt="Jakcrimson" width="64" height="64" style="border-radius: 50%; border: 2px solid #525252;" />
           </td>
           <td valign="top" style="padding-left: 10px;">
             <h2 style="margin: 0; color: #f5f5f5; font-size: 1.25rem; font-weight: 500;">Jakcrimson</h2>
-            <p style="margin: 0; font-size: 0.875rem; color: #a3a3a3;">pierre.lague@gmail.com</p>
+            <p style="margin: 0; font-size: 0.875rem; color: #a3a3a3;">pierre.lague@protonmail.com</p>
             <p style="margin: 5px 0 0 0; font-size: 0.75rem; color: #a3a3a3;">
-              🏆 Rank #N/A
+              🏆 Rank #168
             </p>
             <p style="margin: 10px 0 0 0;">
-              <a href="https://github.com/Jakcrimson" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="display: inline-block; padding: 5px; background-color: #3f3f46; border-radius: 6px; margin-right: 5px; line-height: 0;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="16" height="16" alt="GitHub"/></a>
-              <a href="https://www.linkedin.com/in/pierre-lague-479344195/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display: inline-block; padding: 5px; background-color: #3f3f46; border-radius: 6px; margin-right: 5px; line-height: 0;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-plain.svg" width="16" height="16" alt="LinkedIn"/></a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="display: inline-block; padding: 5px; background-color: #3f3f46; border-radius: 6px; margin-right: 5px; line-height: 0;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="16" height="16" alt="GitHub"/></a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display: inline-block; padding: 5px; background-color: #3f3f46; border-radius: 6px; margin-right: 5px; line-height: 0;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-plain.svg" width="16" height="16" alt="LinkedIn"/></a>
             </p>
           </td>
         </tr>
@@ -54,22 +54,23 @@ order: 5
   <tr>
     <td align="center" style="border: 1px solid #3f3f46; background-color: #3a3a3a; border-radius: 10px; padding: 10px; margin: 5px;">
       <div style="color: #a3a3a3; font-size: 0.75rem; margin-bottom: 4px;">🏅 Problems Solved</div>
-      <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">N/A | {stats["rank"]}</div>
+      <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">68</div>
     </td>
     <td align="center" style="border: 1px solid #3f3f46; background-color: #3a3a3a; border-radius: 10px; padding: 10px; margin: 5px;">
        <div style="color: #a3a3a3; font-size: 0.75rem; margin-bottom: 4px;">🔥 Current Streak</div>
-       <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">N/A days</div>
+       <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">3 days</div>
     </td>
   </tr>
   <tr>
     <td align="center" style="border: 1px solid #3f3f46; background-color: #3a3a3a; border-radius: 10px; padding: 10px; margin: 5px;">
       <div style="color: #a3a3a3; font-size: 0.75rem; margin-bottom: 4px;">⭐ Favorite Category</div>
-      <div style="color: #f5f5f5; font-size: 0.875rem; font-weight: 500;">N/A</div>
+      <div style="color: #f5f5f5; font-size: 0.875rem; font-weight: 500;">Machine Learning</div>
     </td>
     <td align="center" style="border: 1px solid #3f3f46; background-color: #3a3a3a; border-radius: 10px; padding: 10px; margin: 5px;">
        <div style="color: #a3a3a3; font-size: 0.75rem; margin-bottom: 4px;">💥 Score</div>
-       <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">N/A</div>
+       <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">930</div>
     </td>
   </tr>
 </table>
+
 <!-- END_DEEPML_STATS -->
