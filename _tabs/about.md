@@ -54,7 +54,7 @@ order: 5
   <tr>
     <td align="center" style="border: 1px solid #3f3f46; background-color: #3a3a3a; border-radius: 10px; padding: 10px; margin: 5px;">
       <div style="color: #a3a3a3; font-size: 0.75rem; margin-bottom: 4px;">🏅 Problems Solved</div>
-      <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">N/A</div>
+      <div style="color: #f5f5f5; font-size: 1.5rem; font-weight: bold;">N/A | {stats["rank"]}</div>
     </td>
     <td align="center" style="border: 1px solid #3f3f46; background-color: #3a3a3a; border-radius: 10px; padding: 10px; margin: 5px;">
        <div style="color: #a3a3a3; font-size: 0.75rem; margin-bottom: 4px;">🔥 Current Streak</div>
