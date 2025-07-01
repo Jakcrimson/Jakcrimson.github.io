@@ -3,7 +3,7 @@ title: BlackRock - Geopolitical Influence of a P.E. conglomerate.
 author:
   name: Pierre Lague
   link: 
-date: 2025-07-01 09:45:00 +0800
+date: 2024-07-01 09:45:00 +0800
 categories: [Quant, Finance, Geopol]
 tags: [Research]
 math: true
