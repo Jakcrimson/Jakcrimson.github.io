@@ -14,3 +14,8 @@ order: 5
 - 📈 On the side, I am getting more and more interested in how quantitative finance and signal analysis coupled with Artificial Intelligence can impact today's economy and geopolitical interactions.
 
 - 📫 How to reach me: linkedIn (https://www.linkedin.com/in/name-surname-479344195/) or my email : name.surname@protonmail.com
+
+
+### Stats
+
+![Pierre's GitHub stats](https://github-readme-stats.vercel.app/api?username=jakcrimson)
