@@ -24,7 +24,7 @@ This review complements my research on vibration fatigue and durability predicti
 
 <html>
   <body>
-    <iframe src="/assets/posts/reviews/Time_domain_methods_review.pdf" width="100%" height="800px">
+    <iframe src="/assets/posts/reviews/Time_frequency_methods_review.pdf" width="100%" height="800px">
     </iframe>
   </body>
 </html>
