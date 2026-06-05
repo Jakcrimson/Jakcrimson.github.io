@@ -22,7 +22,7 @@ This work supports my research at the intersection of vibration analysis and mac
 
 <html>
   <body>
-    <iframe src="/assets/posts/reviews/Time_domain_methods_review.pdf" width="100%" height="800px">
+    <iframe src="/assets/posts/reviews/Time_frequency_methods_review.pdf" width="100%" height="800px">
     </iframe>
   </body>
 </html>

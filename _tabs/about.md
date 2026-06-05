@@ -16,6 +16,3 @@ order: 5
 - 📫 How to reach me: linkedIn (https://www.linkedin.com/in/name-surname-479344195/) or my email : name.surname@protonmail.com
 
 
-### Stats
-
-![Pierre's GitHub stats](https://github-readme-stats.vercel.app/api?username=jakcrimson)
