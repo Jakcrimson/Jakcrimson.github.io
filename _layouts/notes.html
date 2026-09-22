@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="wrap">
+  <header class="pagehead">
+    {%- if page.kicker %}<span class="label pagehead__kicker">{{ page.kicker }}</span>{% endif %}
+    <h1 class="pagehead__title">{{ page.title }}</h1>
+    {%- if page.lede %}<p class="pagehead__lede">{{ page.lede }}</p>{% endif %}
+  </header>
+
+  <div class="filterbar" role="group" aria-label="Filter by type">
+    <button class="filterbtn" type="button" aria-pressed="true"
+            data-filter-key="" data-filter-value="">All</button>
+    {%- for k in site.data.taxonomy.kinds -%}
+      {%- assign n = site.posts | where: "kind", k.id | size -%}
+      {%- if n > 0 %}
+      <button class="filterbtn" type="button" aria-pressed="false"
+              data-filter-key="kind" data-filter-value="{{ k.id }}">{{ k.label }} <span aria-hidden="true">({{ n }})</span></button>
+      {%- endif -%}
+    {%- endfor -%}
+    <span class="label" id="filter-count" style="margin-left:auto">{{ site.posts | size }} entries</span>
+  </div>
+
+  <ul class="entries" id="entry-list">
+    {%- for p in site.posts %}{% include entry.html post=p %}{% endfor -%}
+  </ul>
+
+  <p class="emptystate" id="filter-empty" hidden>Nothing under that filter.</p>
+</div>

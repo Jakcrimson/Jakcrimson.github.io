@@ -1,19 +1,14 @@
 ---
-title: Hands On - Clustering data II
-author:
-  name: Pierre Lague
-  link: 
-date: 2022-04-02 09:45:00 +0800
-categories: [Studies, UBS - L3 CMI]
-tags: [clustering, data-mining, R, English]
-math: true
-mermaid: true
+title: "Hands On - Clustering data II"
+description: "Second clustering session: hierarchical methods and validation of the number of clusters."
+date: 2022-04-02 09:45:00
+kind: coursework
+affiliation: ubs
+tags: [clustering, machine-learning, r]
+lang: en
 image:
-  src: '/assets/posts/clustering-datamining/header.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/clustering-datamining/header.jpg"
 ---
-
 ## Context
 
 In this new post, we’ll be looking at new libraries used to perform

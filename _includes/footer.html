@@ -1,37 +1,26 @@
-<!--
-  The Footer
--->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>© {{ 'now' | date: "%Y" }} {{ site.social.name }}</span>
+    <span class="label">{{ site.role }}</span>
 
-<footer class="d-flex w-100 justify-content-center">
-  <div class="d-flex justify-content-between align-items-center text-muted">
-    <div class="footer-left">
-      <p class="mb-0">
-        © {{ 'now' | date: "%Y" }}
-        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
-        {% if site.data.locales[lang].copyright.brief %}
-        <span data-toggle="tooltip" data-placement="top"
-          title="{{ site.data.locales[lang].copyright.verbose }}">{{ site.data.locales[lang].copyright.brief }}</span>
-        {% endif %}
-      </p>
-    </div>
+    <nav class="footer__links" aria-label="Elsewhere">
+      {%- for entry in site.data.contact -%}
+        {%- unless entry.hidden -%}
+          {%- if entry.type == 'email' -%}
+            <a href="#" data-mail-user="{{ entry.user }}" data-mail-domain="{{ entry.domain }}">{{ entry.label }}</a>
+          {%- else -%}
+            <a href="{{ entry.url }}" rel="me noopener" target="_blank">{{ entry.label }}</a>
+          {%- endif -%}
+        {%- endunless -%}
+      {%- endfor -%}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </nav>
 
-    <div class="footer-right">
-      <p class="mb-0">
-        {% capture _platform %}
-          <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
-        {% endcapture %}
-
-        {% capture _theme %}
-          <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
-        {% endcapture %}
-
-        {{ site.data.locales[lang].meta
-          | default: 'Powered by :PLATFORM with :THEME theme.'
-          | replace: ':PLATFORM', _platform | replace: ':THEME', _theme
-        }}
-
-      </p>
-    </div>
-
-  </div> <!-- div.d-flex -->
+    <p class="footer__note">
+      Built with Jekyll and hosted on GitHub Pages. Written text and figures are
+      the author's own unless stated otherwise; third-party institutional marks
+      belong to their respective owners and appear here only to identify
+      affiliations. <a href="{{ '/colophon/' | relative_url }}">Colophon</a>.
+    </p>
+  </div>
 </footer>

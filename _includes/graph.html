@@ -1,0 +1,60 @@
+{%- comment -%}
+  The knowledge graph.
+
+  Nodes are topics from _data/taxonomy.yml that at least one post uses; edges are
+  drawn wherever two topics appear on the same piece of work. The co-occurrence
+  is computed in the browser from the document list below, which keeps the
+  payload small and the Liquid readable.
+{%- endcomment -%}
+
+{%- assign posts = site.posts | where_exp: "p", "p.tags.size > 0" -%}
+
+<section class="graph" id="knowledge-graph" aria-labelledby="graph-heading">
+  <h2 class="visually-hidden" id="graph-heading">Map of topics across the work</h2>
+
+  <div class="graph__stage">
+    <svg class="graph__svg" id="graph-svg" role="img"
+         aria-label="Force-directed map of the topics covered by this site's work, grouped into methods, domains and tools.">
+    </svg>
+  </div>
+
+  <div class="graph__foot">
+    <ul class="graph__legend">
+      {%- for g in site.data.taxonomy.groups -%}
+        <li class="glegend glegend--{{ g.id }}">{{ g.label }}</li>
+      {%- endfor -%}
+    </ul>
+    <span class="label graph__hint" id="graph-hint">Hover a topic · click to open</span>
+  </div>
+
+  <noscript>
+    <p class="graph__noscript">
+      The topic map needs JavaScript. The same information is available as a
+      list on the <a href="{{ '/topics/' | relative_url }}">topics index</a>.
+    </p>
+  </noscript>
+</section>
+
+<script type="application/json" id="graph-data">
+{
+"topics": [
+{%- assign first = true -%}
+{%- for t in site.data.taxonomy.topics -%}
+  {%- assign n = site.tags[t.id] | size -%}
+  {%- if n > 0 -%}
+    {%- unless first %},{% endunless -%}{%- assign first = false -%}
+    {"id":{{ t.id | jsonify }},"label":{{ t.label | jsonify }},"group":{{ t.group | jsonify }},"count":{{ n }},"url":{{ '/topics/' | append: t.id | append: '/' | relative_url | jsonify }}}
+  {%- endif -%}
+{%- endfor -%}
+],
+"docs": [
+{%- assign dfirst = true -%}
+{%- for p in posts -%}
+  {%- if p.tags.size > 1 -%}
+    {%- unless dfirst %},{% endunless -%}{%- assign dfirst = false -%}
+    {{ p.tags | jsonify }}
+  {%- endif -%}
+{%- endfor -%}
+]
+}
+</script>

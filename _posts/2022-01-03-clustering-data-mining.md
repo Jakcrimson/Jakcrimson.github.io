@@ -1,17 +1,13 @@
 ---
-title: Hands On - Clustering data
-author:
-  name: Pierre Lague
-  link: 
-date: 2022-03-01 09:45:00 +0800
-categories: [Studies, UBS - L3 CMI]
-tags: [clustering, data-mining, R, English]
-math: true
-mermaid: true
+title: "Hands On - Clustering data"
+description: "Hands-on clustering: choice of distance, partitioning methods, and reading the output."
+date: 2022-03-01 09:45:00
+kind: coursework
+affiliation: ubs
+tags: [clustering, machine-learning, r]
+lang: en
 image:
-  src: '/assets/posts/clustering-datamining/header.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/clustering-datamining/header.jpg"
 ---
 ## Context
 

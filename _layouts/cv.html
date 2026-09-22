@@ -1,0 +1,91 @@
+---
+layout: default
+---
+
+{%- assign cv = site.data.cv -%}
+
+<div class="wrap wrap--prose">
+  <header class="pagehead">
+    {%- if page.kicker %}<span class="label pagehead__kicker">{{ page.kicker }}</span>{% endif %}
+    <h1 class="pagehead__title">{{ page.title }}</h1>
+    {%- if page.lede %}<p class="pagehead__lede">{{ page.lede }}</p>{% endif %}
+
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="{{ '/assets/docs/pierre-lague-cv.pdf' | relative_url }}">
+        Download PDF
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn" href="{{ '/work/' | relative_url }}">Full record</a>
+    </div>
+  </header>
+
+  <section style="margin-bottom:3rem">
+    <div class="section-head">
+      <span class="section-head__num">01</span>
+      <h2 class="section-head__title">Experience</h2>
+    </div>
+
+    {%- for job in cv.experience -%}
+      {%- assign inst = site.data.institutions | where: "id", job.institution | first -%}
+      <article class="period{% unless job.end %} period--current{% endunless %}">
+        <span class="period__dot" aria-hidden="true"></span>
+        <div class="period__head">
+          <span class="period__dates">
+            {{ job.start | date: "%b %Y" }} — {% if job.end %}{{ job.end | date: "%b %Y" }}{% else %}present{% endif %}
+          </span>
+        </div>
+        <h3 class="period__role">{{ job.role }}</h3>
+        <div class="period__org">
+          <span class="period__orgname">{{ inst.name }}{% if job.location %} · {{ job.location }}{% endif %}</span>
+        </div>
+        {%- if job.summary %}<p class="period__summary">{{ job.summary }}</p>{% endif %}
+      </article>
+    {%- endfor -%}
+  </section>
+
+  <section style="margin-bottom:3rem">
+    <div class="section-head">
+      <span class="section-head__num">02</span>
+      <h2 class="section-head__title">Education</h2>
+    </div>
+
+    {%- for ed in cv.education -%}
+      {%- assign inst = site.data.institutions | where: "id", ed.institution | first -%}
+      <article class="period">
+        <span class="period__dot" aria-hidden="true"></span>
+        <div class="period__head">
+          <span class="period__dates">{{ ed.start | date: "%b %Y" }} — {{ ed.end | date: "%b %Y" }}</span>
+        </div>
+        <h3 class="period__role">{{ ed.degree }}</h3>
+        <div class="period__org">
+          <span class="period__orgname">{{ inst.name }}{% if ed.location %} · {{ ed.location }}{% endif %}</span>
+        </div>
+        {%- if ed.honours %}<span class="period__honours">{{ ed.honours }}</span>{% endif %}
+      </article>
+    {%- endfor -%}
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="section-head__num">03</span>
+      <h2 class="section-head__title">Skills &amp; languages</h2>
+    </div>
+
+    <div class="cvgrid">
+      {%- for s in cv.skills %}
+      <div class="cvblock">
+        <h3 class="cvblock__title">{{ s.group }}</h3>
+        <ul>{% for i in s.items %}<li>{{ i }}</li>{% endfor %}</ul>
+      </div>
+      {%- endfor %}
+      <div class="cvblock">
+        <h3 class="cvblock__title">Languages</h3>
+        <ul>{% for l in cv.languages %}<li>{{ l.name }} — {{ l.level }}</li>{% endfor %}</ul>
+      </div>
+    </div>
+  </section>
+
+  {%- if content != '' %}
+  <div class="prose" style="margin-top:3rem">{{ content }}</div>
+  {%- endif %}
+</div>

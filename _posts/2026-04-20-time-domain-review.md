@@ -1,28 +1,26 @@
 ---
-title: PhD Review - Time–Frequency Analysis Methods for Feature Engineering
-author:
-  name: Pierre Lague
-  link: 
-date: 2026-05-20 09:45:00 +0800
-categories: [Academic, Inria]
-tags: [review, physics, PhD, signal_processing]
-math: true
-mermaid: true
+title: "PhD Review - Time Domain Methods for Fatigue and Damage Estimation"
+description: "A review of time-domain fatigue estimation, from cycle counting to cumulative damage models."
+date: 2026-04-20 09:45:00
+kind: review
+affiliation: inria
+tags: [signal-processing, physics]
+lang: en
+featured: true
 image:
-  src: '/assets/posts/reviews/phd_logo.png'
-  width: 800
-  height: 600
+  src: "/assets/posts/reviews/phd_logo.png"
 ---
+While frequency-domain methods offer powerful approximations, many fatigue problems still require working directly with the vibration signal itself. Time-domain approaches remain the reference for capturing complex loading effects and accurately reproducing real-world damage mechanisms.
 
-Many real-world vibration signals are non-stationary, meaning their frequency content changes over time. Capturing these dynamics is essential for extracting meaningful information and building robust machine learning models.
+In *Time Domain Methods for Fatigue and Damage Estimation*, I review the main techniques used to evaluate fatigue damage from raw time histories, from cycle counting methods to cumulative damage models. The paper highlights their advantages, limitations, and practical applications in durability engineering.
 
-In *Time–Frequency Analysis Methods for Feature Engineering*, I review the main techniques used to analyze signals jointly in time and frequency, including spectrograms, wavelets, and other time–frequency representations. The paper explores how these methods can be used to extract informative features for condition monitoring, fault detection, and predictive modeling.
+This review complements my research on vibration fatigue and durability prediction by providing the foundations needed to analyze, model, and validate damage directly from measured operational data.
 
-This work supports my research at the intersection of vibration analysis and machine learning, where effective feature engineering is often the key to turning raw sensor data into actionable insights.
+
 
 <html>
   <body>
-    <iframe src="/assets/posts/reviews/Time_frequency_methods_review.pdf" width="100%" height="800px">
+    <iframe src="/assets/posts/reviews/Time_domain_methods_review.pdf" width="100%" height="800px">
     </iframe>
   </body>
 </html>

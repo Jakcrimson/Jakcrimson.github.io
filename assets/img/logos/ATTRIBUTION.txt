@@ -1,0 +1,36 @@
+# Institutional marks used on this site
+#
+# Reproduced to identify affiliations only. Each mark remains the property of
+# its owner; no endorsement is implied. Files retrieved from Wikimedia Commons.
+
+inria.svg
+  source:  https://commons.wikimedia.org/wiki/File:Inr_logo_rouge.svg
+  licence: Public domain
+
+dga.svg
+  source:  https://commons.wikimedia.org/wiki/File:Logo_DirectionG%C3%A9n%C3%A9raleArmement.svg
+  licence: Licence Ouverte
+
+univ-rennes.svg
+  source:  https://commons.wikimedia.org/wiki/File:Logotype_Universit%C3%A9_de_Rennes.svg
+  licence: Public domain
+
+cnrs.svg
+  source:  https://commons.wikimedia.org/wiki/File:Cnrs-logo.svg
+  licence: Public domain
+
+ulille.svg
+  source:  https://commons.wikimedia.org/wiki/File:Logotype_Universit%C3%A9_de_Lille_2022.svg
+  licence: Public domain
+
+utc.svg
+  source:  https://commons.wikimedia.org/wiki/File:Technische_Universit%C3%A4t_Compi%C3%A8gne_Logo.svg
+  licence: Public domain
+
+ubs.svg
+  source:  https://commons.wikimedia.org/wiki/File:Logo_Universite_Bretagne_Sud.svg
+  licence: Public domain
+
+accenture.svg
+  source:  https://commons.wikimedia.org/wiki/File:Accenture_logo.svg
+  licence: Public domain

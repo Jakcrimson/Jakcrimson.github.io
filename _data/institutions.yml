@@ -1,0 +1,147 @@
+# Institutions Pierre has worked with or studied at.
+#
+# `id`       stable slug — referenced by posts (`affiliation:`) and by _data/cv.yml
+# `logo`     path under /assets/img/logos/. If the file is missing the component
+#            falls back to `short` rendered as a typographic wordmark, so the page
+#            never shows a broken image.
+# `kind`     lab | university | company | agency  (drives the filter on /work/)
+
+- id: inria
+  name: Inria
+  full: Institut national de recherche en sciences et technologies du numérique
+  short: Inria
+  kind: lab
+  logo: /assets/img/logos/inria.svg
+  url: https://www.inria.fr/en
+  location: Rennes, France
+
+- id: dga
+  name: DGA
+  full: Direction générale de l'armement
+  short: DGA
+  kind: agency
+  logo: /assets/img/logos/dga.svg
+  url: https://www.defense.gouv.fr/dga
+  location: France
+
+- id: aid
+  name: AID
+  full: Agence de l'innovation de défense
+  short: AID
+  kind: agency
+  logo: /assets/img/logos/aid.svg
+  url: https://www.defense.gouv.fr/aid
+  location: France
+
+- id: univ-angers
+  name: Université d'Angers
+  full: Université d'Angers
+  short: UA
+  kind: university
+  logo: /assets/img/logos/univ-angers.svg
+  url: https://www.univ-angers.fr
+  location: Angers, France
+
+- id: univ-rennes
+  name: Université de Rennes
+  full: Université de Rennes
+  short: UR
+  kind: university
+  logo: /assets/img/logos/univ-rennes.svg
+  url: https://www.univ-rennes.fr
+  location: Rennes, France
+
+- id: sudo
+  name: Sudo Group
+  full: Sudo Group
+  short: Sudo
+  kind: company
+  logo: /assets/img/logos/sudo.svg
+  url: https://sudo-group.com
+  location: Lille, France
+
+- id: ulille
+  name: Université de Lille
+  full: Université de Lille
+  short: ULille
+  kind: university
+  logo: /assets/img/logos/ulille.svg
+  url: https://www.univ-lille.fr/en
+  location: Lille, France
+
+- id: utc
+  name: UTC
+  full: Université de Technologie de Compiègne
+  short: UTC
+  kind: university
+  logo: /assets/img/logos/utc.svg
+  url: https://www.utc.fr/en
+  location: Compiègne, France
+
+- id: ubs
+  name: Université Bretagne Sud
+  full: Université Bretagne Sud
+  short: UBS
+  kind: university
+  logo: /assets/img/logos/ubs.svg
+  url: https://www.univ-ubs.fr
+  location: Vannes, France
+
+- id: uco
+  name: UCO
+  full: Université Catholique de l'Ouest
+  short: UCO
+  kind: university
+  # The official mark is a vertical lockup (0.45:1); in a row of wordmarks it
+  # renders ~19px wide and reads as a smudge. Wordmark until a horizontal
+  # version is available.
+  logo:
+  url: https://www.uco.fr
+  location: Angers, France
+
+- id: cnrs
+  name: CNRS
+  full: Centre national de la recherche scientifique
+  short: CNRS
+  kind: lab
+  logo: /assets/img/logos/cnrs.svg
+  url: https://www.cnrs.fr/en
+  location: France
+
+- id: letg
+  name: LETG
+  full: Littoral, Environnement, Télédétection, Géomatique — UMR 6554 CNRS
+  short: LETG
+  kind: lab
+  parent: cnrs
+  logo: /assets/img/logos/letg.svg
+  url: https://letg.cnrs.fr
+  location: Rennes, France
+
+- id: osur
+  name: OSUR
+  full: Observatoire des Sciences de l'Univers de Rennes
+  short: OSUR
+  kind: lab
+  parent: cnrs
+  logo: /assets/img/logos/osur.svg
+  url: https://osur.univ-rennes.fr
+  location: Rennes, France
+
+- id: accenture
+  name: Accenture
+  full: Accenture Technology
+  short: Accenture
+  kind: company
+  logo: /assets/img/logos/accenture.svg
+  url: https://www.accenture.com
+  location: Nantes, France
+
+- id: independent
+  name: Independent
+  full: Independent work
+  short: IND
+  kind: independent
+  logo:
+  url:
+  location:

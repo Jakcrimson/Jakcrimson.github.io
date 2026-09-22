@@ -1,19 +1,14 @@
 ---
-title: Internship - Building a predictive model for road surface condition, Accenture Technology.
-author:
-  name: Pierre Lague
-  link: 
-date: 2021-08-26 09:45:00 +0800
-categories: [Internships]
-tags: [ML, DataIku, Python, French]
-math: true
-mermaid: true
+title: "Internship - Building a predictive model for road surface condition, Accenture Technology."
+description: "First engineering placement: a predictive model for road surface condition, built on an industrial Dataiku pipeline."
+date: 2021-08-26 09:45:00
+kind: internship
+affiliation: accenture
+tags: [machine-learning, python, dataiku]
+lang: fr
 image:
-  src: '/assets/posts/internship-accenture/header.png'
-  width: 800
-  height: 600
+  src: "/assets/posts/internship-accenture/header.png"
 ---
-
 ## Context
 
 This internship took place from the 16th of April 2021 to the 26th of June 2021. It's part of the end of term assignement at the Universitary Institute of Technology in Vannes.

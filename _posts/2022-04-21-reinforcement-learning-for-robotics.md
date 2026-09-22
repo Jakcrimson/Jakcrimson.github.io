@@ -1,19 +1,14 @@
 ---
-title: Personal Project - Reinforcement Learning applied to robotic agent (Bipedal Walker)
-author:
-  name: Pierre Lague
-  link: 
-date: 2022-03-26 09:45:00 +0800
-categories: [Personal Projects]
-tags: [RL, OpenAI, Python, English]
-math: true
-mermaid: true
+title: "Personal Project - Reinforcement Learning applied to robotic agent (Bipedal Walker)"
+description: "Teaching a Bipedal Walker to walk — a self-directed reinforcement learning project on a continuous control task."
+date: 2022-03-26 09:45:00
+kind: project
+affiliation: independent
+tags: [reinforcement-learning, robotics, python]
+lang: en
 image:
-  src: '/assets/posts/reinforcement-learning-bipedal-walker/header.png'
-  width: 800
-  height: 600
+  src: "/assets/posts/reinforcement-learning-bipedal-walker/header.png"
 ---
-
 ## Abstract
 
 This project aims to link two of the things i\'m very interested in :

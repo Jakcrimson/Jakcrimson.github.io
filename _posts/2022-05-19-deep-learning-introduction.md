@@ -1,19 +1,15 @@
 ---
-title: Python and Machine Learning - Deep Learning Introduction
-author:
-  name: Pierre Lague
-  link: https://github.com/Jakcrimson
-date: 2022-05-19 11:33:00 +0800
-categories: [Studies, UBS - L3 CMI]
-tags: [Python, ML & DL, French]
-math: true
-mermaid: true
+title: "Python and Machine Learning - Deep Learning Introduction"
+description: "Introduction to deep learning: from the perceptron to a trained network, in Python."
+date: 2022-05-19 11:33:00
+kind: coursework
+affiliation: ubs
+tags: [deep-learning, machine-learning, python]
+lang: fr
+repo: https://github.com/Jakcrimson
 image:
-  src: '/assets/posts/python-machine-learning/header.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/python-machine-learning/header.jpg"
 ---
-
 ## Context
 This assignment is part of the final grade for the Python and Machine Learning module taught by Pr. Jacques Froment and Pr. Salim Lardjane (U. of South Brittany).
 The report is in french, it might be translated.

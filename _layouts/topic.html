@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+{%- assign topic = site.data.taxonomy.topics | where: "id", page.tag | first -%}
+{%- assign group = site.data.taxonomy.groups | where: "id", topic.group | first -%}
+
+<div class="wrap">
+  <header class="pagehead">
+    <span class="label pagehead__kicker">Topic{% if group %} · {{ group.label }}{% endif %}</span>
+    <h1 class="pagehead__title">{{ topic.label | default: page.tag }}</h1>
+    {%- if topic.note %}<p class="pagehead__lede">{{ topic.note }}</p>{% endif %}
+  </header>
+
+  <div class="section-head">
+    <span class="section-head__num">{{ page.posts | size }}</span>
+    <h2 class="section-head__title">{% if page.posts.size == 1 %}Entry{% else %}Entries{% endif %}</h2>
+    <span class="section-head__aside"><a href="{{ '/topics/' | relative_url }}">← All topics</a></span>
+  </div>
+
+  <ul class="entries">
+    {%- for p in page.posts %}{% include entry.html post=p %}{% endfor -%}
+  </ul>
+</div>

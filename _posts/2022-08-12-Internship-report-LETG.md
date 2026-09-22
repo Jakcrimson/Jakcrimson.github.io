@@ -1,19 +1,15 @@
 ---
-title: Internship - Semantic Segmentation State Of The Art For Ultra High Resolution UAV Imagery 
-author:
-  name: Pierre Lague
-  link: 
-date: 2022-12-12 09:45:00 +0800
-categories: [Internships]
-tags: [DL, Semantic Segmentation, Python, English]
-math: true
-mermaid: true
+title: "Internship - Semantic Segmentation State Of The Art For Ultra High Resolution UAV Imagery"
+description: "Semantic segmentation for ultra-high-resolution UAV imagery: state of the art and experimental comparison, at CNRS LETG."
+date: 2022-12-12 09:45:00
+kind: internship
+affiliation: letg
+tags: [deep-learning, computer-vision, remote-sensing, python]
+lang: en
+featured: true
 image:
-  src: '/assets/posts/internship-letg/header.jpeg'
-  width: 800
-  height: 600
+  src: "/assets/posts/internship-letg/header.jpeg"
 ---
-
 ## Context
 
 This internship took place from the 1st of May 2022 to the 12th of August 2022. It's part of the end of term assignement at the University of South Britanny in Vannes.

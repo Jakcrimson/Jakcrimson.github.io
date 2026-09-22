@@ -1,0 +1,143 @@
+---
+layout: default
+---
+
+{%- comment -%}
+  The career page. Two streams — positions held, and degrees read — each entry
+  carrying the work that came out of it. A post attaches to an entry by its
+  `affiliation` front-matter key.
+{%- endcomment -%}
+
+<div class="wrap">
+  <header class="pagehead">
+    {%- if page.kicker %}<span class="label pagehead__kicker">{{ page.kicker }}</span>{% endif %}
+    <h1 class="pagehead__title">{{ page.title }}</h1>
+    {%- if page.lede %}<p class="pagehead__lede">{{ page.lede }}</p>{% endif %}
+  </header>
+
+  <!-- -------------------------------------------------------------- -->
+  <section style="margin-bottom:4rem">
+    <div class="section-head">
+      <span class="section-head__num">01</span>
+      <h2 class="section-head__title">Positions</h2>
+      <span class="section-head__aside">{{ site.data.cv.experience | size }} entries</span>
+    </div>
+
+    {%- for job in site.data.cv.experience -%}
+      {%- assign inst = site.data.institutions | where: "id", job.institution | first -%}
+      {%- assign output = site.posts | where: "affiliation", job.affiliation -%}
+      {%- assign current = false -%}
+      {%- unless job.end %}{% assign current = true %}{% endunless -%}
+
+      <article class="period{% if current %} period--current{% endif %}">
+        <span class="period__dot" aria-hidden="true"></span>
+
+        <div class="period__head">
+          <span class="period__dates">
+            {{ job.start | date: "%b %Y" }} — {% if job.end %}{{ job.end | date: "%b %Y" }}{% else %}present{% endif %}
+          </span>
+          {%- if current %}<span class="now">Current</span>{% endif %}
+        </div>
+
+        <h3 class="period__role">{{ job.role }}</h3>
+
+        <div class="period__org">
+          {%- if inst %}{% include logo.html id=job.institution size="sm" %}{% endif %}
+          <span class="period__orgname">
+            {{ inst.name }}{% if job.location %} · {{ job.location }}{% endif %}
+          </span>
+          {%- if job.with %}
+            <span class="logos logos--tight">
+              {%- for w in job.with %}{% include logo.html id=w size="sm" %}{% endfor -%}
+            </span>
+          {%- endif %}
+        </div>
+
+        {%- if job.summary %}<p class="period__summary">{{ job.summary }}</p>{% endif %}
+
+        {%- if job.highlights.size > 0 %}
+        <ul class="period__highlights">
+          {%- for h in job.highlights %}<li>{{ h }}</li>{% endfor -%}
+        </ul>
+        {%- endif %}
+
+        {%- if output.size > 0 %}
+        <div class="period__output">
+          <span class="label">Work from this position — {{ output | size }}</span>
+          <ul class="outputlist">
+            {%- for p in output %}
+            <li>
+              <span class="entry__date">{{ p.date | date: "%b %Y" }}</span>
+              <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+            </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        {%- endif %}
+      </article>
+    {%- endfor -%}
+  </section>
+
+  <!-- -------------------------------------------------------------- -->
+  <section style="margin-bottom:4rem">
+    <div class="section-head">
+      <span class="section-head__num">02</span>
+      <h2 class="section-head__title">Education</h2>
+      <span class="section-head__aside">{{ site.data.cv.education | size }} entries</span>
+    </div>
+
+    {%- for ed in site.data.cv.education -%}
+      {%- assign inst = site.data.institutions | where: "id", ed.institution | first -%}
+      {%- assign output = site.posts | where: "affiliation", ed.affiliation -%}
+
+      <article class="period">
+        <span class="period__dot" aria-hidden="true"></span>
+
+        <div class="period__head">
+          <span class="period__dates">{{ ed.start | date: "%b %Y" }} — {{ ed.end | date: "%b %Y" }}</span>
+        </div>
+
+        <h3 class="period__role">{{ ed.degree }}</h3>
+
+        <div class="period__org">
+          {%- if inst %}{% include logo.html id=ed.institution size="sm" %}{% endif %}
+          <span class="period__orgname">{{ inst.name }}{% if ed.location %} · {{ ed.location }}{% endif %}</span>
+        </div>
+
+        {%- if ed.honours %}<span class="period__honours">{{ ed.honours }}</span>{% endif %}
+        {%- if ed.summary %}<p class="period__summary">{{ ed.summary }}</p>{% endif %}
+        {%- if ed.thesis %}<p class="period__summary"><strong>Thesis:</strong> {{ ed.thesis }}</p>{% endif %}
+
+        {%- if output.size > 0 %}
+        <div class="period__output">
+          <span class="label">Coursework &amp; projects — {{ output | size }}</span>
+          <ul class="outputlist">
+            {%- for p in output %}
+            <li>
+              <span class="entry__date">{{ p.date | date: "%b %Y" }}</span>
+              <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+            </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        {%- endif %}
+      </article>
+    {%- endfor -%}
+  </section>
+
+  <!-- -------------------------------------------------------------- -->
+  {%- assign solo = site.posts | where: "affiliation", "independent" -%}
+  {%- if solo.size > 0 %}
+  <section>
+    <div class="section-head">
+      <span class="section-head__num">03</span>
+      <h2 class="section-head__title">Independent</h2>
+      <span class="section-head__aside">Outside any institution</span>
+    </div>
+
+    <ul class="entries">
+      {%- for p in solo %}{% include entry.html post=p %}{% endfor -%}
+    </ul>
+  </section>
+  {%- endif %}
+</div>

@@ -1,0 +1,49 @@
+{%- comment -%}
+  One row in a list of work.  {% include entry.html post=post %}
+  Optional: tags=false to drop the topic chips (used in dense listings).
+{%- endcomment -%}
+
+{%- assign post = include.post -%}
+{%- assign kind = site.data.taxonomy.kinds | where: "id", post.kind | first -%}
+{%- assign inst = site.data.institutions | where: "id", post.affiliation | first -%}
+
+<li class="entry"
+    data-kind="{{ post.kind }}"
+    data-affiliation="{{ post.affiliation }}"
+    data-topics="{{ post.tags | join: ' ' }}">
+  <div class="entry__meta">
+    <time class="entry__date" datetime="{{ post.date | date_to_xmlschema }}">
+      {{ post.date | date: "%b %Y" }}
+    </time>
+    {%- if kind %}<span class="entry__kind">{{ kind.label }}</span>{%- endif %}
+  </div>
+
+  <div class="entry__body">
+    <h3 class="entry__title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h3>
+
+    {%- if post.description %}
+      <p class="entry__desc">{{ post.description }}</p>
+    {%- endif %}
+
+    <div class="entry__foot">
+      {%- if inst and inst.id != 'independent' %}
+        <span class="entry__venue">{{ inst.name }}</span>
+      {%- endif %}
+
+      {%- if include.tags != false and post.tags.size > 0 %}
+        <ul class="chip-row">
+          {%- for t in post.tags limit: 4 -%}
+            {%- assign topic = site.data.taxonomy.topics | where: "id", t | first -%}
+            {%- if topic -%}
+              <li>
+                <a class="chip chip--{{ topic.group }}" href="{{ '/topics/' | append: t | append: '/' | relative_url }}">{{ topic.label }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif %}
+    </div>
+  </div>
+</li>

@@ -1,19 +1,17 @@
 ---
-title: Deep Learning - Denoising Autoencoder
-author:
-  name: Pierre Lague & François MULLER
-  link: 
-date: 2024-04-11 09:45:00 +0800
-categories: [Studies, U-Lille, Python]
-tags: [Python, ML]
-math: true
-mermaid: true
+title: "Deep Learning - Denoising Autoencoder"
+description: "Building a denoising autoencoder, and reading the latent space it learns."
+date: 2024-04-11 09:45:00
+kind: coursework
+affiliation: ulille
+tags: [deep-learning, dimensionality-reduction, python]
+lang: en
+authors:
+  - "Pierre Lague"
+  - "François MULLER"
 image:
-  src: '/assets/posts/autoencodeur/DenoisingAutoencoder/ae.png'
-  width: 800
-  height: 600
+  src: "/assets/posts/autoencodeur/DenoisingAutoencoder/ae.png"
 ---
-
 # Deep Learning - Autoencoders 🔉
 
 * [Etude Autoencodeur](#etude-ae)
@@ -1584,6 +1582,6 @@ Contributions are highly encouraged! If you have suggestions, improvements, or f
 
 ## License 📝
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file in the project repository.
 
 Developed by Pierre LAGUE and François MULLER at the University of Lille, France. 🚀📊

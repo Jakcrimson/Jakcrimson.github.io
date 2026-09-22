@@ -1,0 +1,186 @@
+# Controlled vocabulary for post tags.
+#
+# Posts may only use ids listed here — `tools/check_taxonomy.py` enforces it.
+# Everything downstream (the /topics/ index, the knowledge graph on the home page,
+# topic pages) is generated from this file, so adding a topic is a one-line change.
+#
+# groups
+#   method  — what was done          (blue)
+#   domain  — what it was done to    (slate)
+#   tool    — what it was done with  (ochre)
+
+groups:
+  - id: method
+    label: Methods
+    blurb: Techniques and model families.
+  - id: domain
+    label: Domains
+    blurb: Fields the work is applied to.
+  - id: tool
+    label: Tools
+    blurb: Languages and software.
+
+topics:
+  # ---- methods ---------------------------------------------------------------
+  - id: machine-learning
+    label: Machine learning
+    group: method
+    note: Supervised and unsupervised learning, model selection, evaluation.
+  - id: deep-learning
+    label: Deep learning
+    group: method
+    note: Neural architectures, training dynamics, representation learning.
+  - id: reinforcement-learning
+    label: Reinforcement learning
+    group: method
+    note: Agents learning control policies from interaction and reward.
+  - id: multi-agent-systems
+    label: Multi-agent systems
+    group: method
+    note: Coordination, task allocation and load-balancing across many agents.
+  - id: nlp
+    label: Natural language processing
+    group: method
+    note: Transformers, sentiment analysis, text representation.
+  - id: computer-vision
+    label: Computer vision
+    group: method
+    note: Image understanding, segmentation, landmark detection.
+  - id: signal-processing
+    label: Signal processing
+    group: method
+    note: Time, frequency and time–frequency characterisation of signals.
+  - id: statistics
+    label: Statistics
+    group: method
+    note: Inference, experimental design, statistical modelling.
+  - id: extreme-value-statistics
+    label: Extreme value statistics
+    group: method
+    note: Tail behaviour, extreme value distributions, return levels.
+  - id: regression
+    label: Regression
+    group: method
+    note: Linear, piecewise and generalised regression models.
+  - id: clustering
+    label: Clustering
+    group: method
+    note: Unsupervised partitioning and mixture models.
+  - id: dimensionality-reduction
+    label: Dimensionality reduction
+    group: method
+    note: Manifold learning, UMAP, autoencoders as compression.
+  - id: time-series
+    label: Time series
+    group: method
+    note: Forecasting and sequential structure in data.
+  - id: optimization
+    label: Optimization
+    group: method
+    note: Search, allocation and numerical optimisation.
+  - id: algorithms
+    label: Algorithms & complexity
+    group: method
+    note: Algorithm design and complexity analysis.
+  - id: explainability
+    label: Explainability
+    group: method
+    note: Making model behaviour inspectable and accountable.
+
+  # ---- domains ---------------------------------------------------------------
+  - id: physics
+    label: Physics
+    group: domain
+    note: Mechanical physics, vibration, fatigue and damage.
+  - id: remote-sensing
+    label: Remote sensing
+    group: domain
+    note: UAV imagery, LiDAR, point clouds, geospatial data.
+  - id: robotics
+    label: Robotics
+    group: domain
+    note: Simulated and physical agents acting in an environment.
+  - id: cybersecurity
+    label: Cybersecurity
+    group: domain
+    note: Secure systems, memory safety, exploitation and defence.
+  - id: healthcare
+    label: Health data
+    group: domain
+    note: Clinical and epidemiological data analysis.
+  - id: finance
+    label: Finance & geopolitics
+    group: domain
+    note: Quantitative finance and the political economy of capital.
+  - id: ai-governance
+    label: AI governance
+    group: domain
+    note: Regulation, oversight and institutional design for artificial intelligence.
+  - id: cloud
+    label: Cloud systems
+    group: domain
+    note: Cloud cost, commitment and capacity modelling.
+  - id: software-engineering
+    label: Software engineering
+    group: domain
+    note: Design, architecture and delivery of working software.
+  - id: mathematics
+    label: Mathematics
+    group: domain
+    note: Differential calculus, dynamical systems, numerical analysis.
+
+  # ---- tools -----------------------------------------------------------------
+  - id: python
+    label: Python
+    group: tool
+  - id: r
+    label: R
+    group: tool
+  - id: cpp
+    label: C / C++
+    group: tool
+  - id: java
+    label: Java
+    group: tool
+  - id: matlab
+    label: MATLAB
+    group: tool
+  - id: scilab
+    label: Scilab
+    group: tool
+  - id: sas
+    label: SAS
+    group: tool
+  - id: dataiku
+    label: Dataiku
+    group: tool
+
+# `kind` classifies the piece of work itself. Rendered as the label in listings.
+kinds:
+  - id: research
+    label: Research
+    blurb: Peer-facing research output — reviews, studies, theses.
+  - id: review
+    label: Literature review
+    blurb: Structured surveys of a body of work.
+  - id: thesis
+    label: Thesis
+    blurb: End-of-degree research dissertations.
+  - id: internship
+    label: Internship
+    blurb: Research and engineering placements.
+  - id: coursework
+    label: Coursework
+    blurb: Graded assignments, labs and exams.
+  - id: project
+    label: Project
+    blurb: Self-directed and team projects.
+  - id: essay
+    label: Essay
+    blurb: Argued pieces and proposals written outside the thesis.
+  - id: teaching
+    label: Teaching
+    blurb: Course material — lectures and lab sheets.
+  - id: note
+    label: Note
+    blurb: Shorter written notes.

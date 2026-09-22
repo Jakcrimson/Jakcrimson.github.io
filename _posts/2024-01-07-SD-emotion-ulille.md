@@ -1,19 +1,17 @@
 ---
-title: Data Science - Facial Landmark Emotion Classification - University of Lille
-author:
-  name: Pierre Lague & François Muller (@franzele21)
-  link: 
-date: 2023-12-19 09:45:00 +0800
-categories: [Studies, U-Lille, Python]
-tags: [Python, ML]
-math: true
-mermaid: true
+title: "Data Science - Facial Landmark Emotion Classification - University of Lille"
+description: "Classifying emotion from facial landmarks — feature engineering on geometry rather than pixels."
+date: 2023-12-19 09:45:00
+kind: coursework
+affiliation: ulille
+tags: [machine-learning, computer-vision, python]
+lang: en
+authors:
+  - "Pierre Lague"
+  - "François Muller (@franzele21)"
 image:
-  src: '/assets/posts/SD-facial-emotion/header.jpeg'
-  width: 800
-  height: 600
+  src: "/assets/posts/SD-facial-emotion/header.jpeg"
 ---
-
 # FLEC - Facial Landmark Emotion Classification Project
 
 Welcome to the **Facial Landmark Emotion Classification (FLEC)** project! Our goal is to develop a robust classifier capable of recognizing six facial expressions using the 68 facial landmarks provided in .csv files.
@@ -62,6 +60,6 @@ Contributions are highly encouraged! If you have suggestions, improvements, or f
 
 ## License 📝
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file in the project repository.
 
 Developed by Pierre LAGUE and François MULLER (@franzele21) at the University of Lille, France. 🚀📊

@@ -1,0 +1,90 @@
+// ---------------------------------------------------------------------------
+// Design tokens
+//
+// The palette is built around the European blue (#003399) used as a structural
+// colour — rules, markers, links — rather than as decoration, with the European
+// gold reserved for a single job: marking what is current. Everything else is
+// warm paper and ink.
+//
+// Light is the primary mode. Dark is a real second design, not an inversion:
+// the ground shifts to a blue-black so the same blue still reads as structure.
+// ---------------------------------------------------------------------------
+
+:root {
+  // -- ground ---------------------------------------------------------------
+  --paper:        #fbfaf7;   // page
+  --paper-sunk:   #f4f2ec;   // wells, code blocks, table stripes
+  --paper-raised: #ffffff;   // cards lifted off the page
+
+  // -- ink ------------------------------------------------------------------
+  --ink:          #14171f;   // body text, headings
+  --ink-muted:    #4c525f;   // secondary prose
+  --ink-faint:    #666e7c;   // metadata, captions — 4.9:1 on paper, so it
+                             // still clears AA at the 11px label size
+
+  // -- structure ------------------------------------------------------------
+  --rule:         rgba(20, 23, 31, 0.13);
+  --rule-strong:  rgba(20, 23, 31, 0.26);
+
+  // -- accents --------------------------------------------------------------
+  --eu-blue:      #003399;   // the structural colour
+  --eu-blue-lift: #1d4ed8;   // hover / active
+  --eu-blue-wash: rgba(0, 51, 153, 0.07);
+  --eu-gold:      #f0b323;   // "current" marker only
+  --eu-gold-wash: rgba(240, 179, 35, 0.16);
+
+  // Topic-group hues for the graph and tag chips. Desaturated on purpose —
+  // they must sit quietly next to body text.
+  --group-method: #2f5ca8;
+  --group-domain: #4a6b63;
+  --group-tool:   #8a6a3c;
+
+  --selection:    rgba(0, 51, 153, 0.14);
+
+  // -- type -----------------------------------------------------------------
+  --font-serif: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style",
+                Georgia, "Times New Roman", serif;
+  --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Helvetica, Arial, sans-serif;
+  --font-mono:  "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono",
+                Menlo, Consolas, "Liberation Mono", monospace;
+
+  // -- measure --------------------------------------------------------------
+  --measure:      42rem;   // prose column
+  --measure-wide: 68rem;   // index and listing pages
+  --gutter:       clamp(1.25rem, 5vw, 3rem);
+
+  --radius:       3px;     // barely there, by design
+  --transition:   140ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --paper:        #0e1117;
+  --paper-sunk:   #161a22;
+  --paper-raised: #171b24;
+
+  --ink:          #e7e9ee;
+  --ink-muted:    #a8b0be;
+  --ink-faint:    #798292;
+
+  --rule:         rgba(231, 233, 238, 0.14);
+  --rule-strong:  rgba(231, 233, 238, 0.28);
+
+  // #003399 is unreadable on a dark ground; lift it until it carries the same
+  // structural weight it has in light mode.
+  --eu-blue:      #8fa9f0;
+  --eu-blue-lift: #b3c4f7;
+  --eu-blue-wash: rgba(143, 169, 240, 0.12);
+  --eu-gold:      #e0ab3f;
+  --eu-gold-wash: rgba(224, 171, 63, 0.16);
+
+  --group-method: #7e9bd8;
+  --group-domain: #7ba79b;
+  --group-tool:   #c2a06a;
+
+  --selection:    rgba(143, 169, 240, 0.22);
+
+  color-scheme: dark;
+}

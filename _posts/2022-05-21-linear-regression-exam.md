@@ -1,19 +1,18 @@
 ---
-title: Linear Regression and Simulation Methods Final Exam
-author:
-  name: Pierre Lague & Mattéo Chopin
-  link: 
-date: 2022-05-21 09:45:00 +0800
-categories: [Studies, UBS - L3 CMI, Statistics]
-tags: [Python, Exam, Regression, English]
+title: "Linear Regression and Simulation Methods Final Exam"
+description: "Final exam on linear regression and simulation methods, worked through end to end."
+date: 2022-05-21 09:45:00
+kind: coursework
+affiliation: ubs
+tags: [regression, statistics, python]
+lang: en
+authors:
+  - "Pierre Lague"
+  - "Mattéo Chopin"
 math: true
-mermaid: true
 image:
-  src: '/assets/posts/regression_lineaire_exam/header.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/regression_lineaire_exam/header.jpg"
 ---
-
 Final exam on computers for the **Linear Regression and Simulation Methods** module taught by Pr. François Septier (U. of South Brittany).
 
 # Linear Regression and simulation methods exam. {#linear-regression-and-simulation-methods-exam}

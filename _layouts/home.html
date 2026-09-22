@@ -1,100 +1,108 @@
 ---
-layout: page
-# The Home page layout
+layout: default
 ---
 
-{% include lang.html %}
+{%- assign now = site.data.cv.current -%}
+{%- assign featured = site.posts | where: "featured", true -%}
+{%- assign recent = site.posts | where_exp: "p", "p.featured != true" -%}
 
-{% assign pinned = site.posts | where: "pin", "true" %}
-{% assign default = site.posts | where_exp: "item", "item.pin != true and item.hidden != true" %}
+<div class="wrap stack">
 
-{% assign posts = "" | split: "" %}
+  <!-- ------------------------------------------------------------------ -->
+  <section class="hero">
+    <div class="hero__body">
+      <span class="now">{{ now.role | split: " — " | last }} · since {{ now.since | date: "%b %Y" }}</span>
 
-<!-- Get pinned posts -->
+      <h1 class="hero__name">{{ site.social.name }}</h1>
+      <p class="hero__role">{{ now.role }} — {{ now.location }}</p>
 
-{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign pinned_num = pinned.size | minus: offset %}
+      <div class="hero__statement">
+        {{ content }}
+      </div>
 
-{% if pinned_num > 0 %}
-  {% for i in (offset..pinned.size) limit: pinned_num %}
-    {% assign posts = posts | push: pinned[i] %}
-  {% endfor %}
-{% else %}
-  {% assign pinned_num = 0 %}
-{% endif %}
-
-
-<!-- Get default posts -->
-
-{% assign default_beg = offset | minus: pinned.size %}
-
-{% if default_beg < 0 %}
-  {% assign default_beg = 0 %}
-{% endif %}
-
-{% assign default_num = paginator.posts | size | minus: pinned_num  %}
-{% assign default_end = default_beg | plus: default_num | minus: 1 %}
-
-{% if default_num > 0 %}
-  {% for i in (default_beg..default_end) %}
-    {% assign posts = posts | push: default[i] %}
-  {% endfor %}
-{% endif %}
-
-<div id="post-list">
-
-{% for post in posts %}
-
-  <div class="post-preview">
-    <h1>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        {% include no-linenos.html content=post.content %}
-        {{ content | markdownify | strip_html | truncate: 200 | escape }}
-      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="{{ '/research/' | relative_url }}">Research</a>
+        <a class="btn" href="{{ '/work/' | relative_url }}">Work &amp; studies</a>
+        <a class="btn" href="{{ '/assets/docs/pierre-lague-cv.pdf' | relative_url }}">
+          CV
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
     </div>
 
-    <div class="post-meta text-muted d-flex">
+    {%- if site.avatar %}
+    <img class="hero__portrait" src="{{ site.avatar | relative_url }}"
+         alt="Portrait of {{ site.social.name }}" width="168" height="210" loading="eager">
+    {%- endif %}
+  </section>
 
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        {% include timeago.html date=post.date tooltip=true capitalize=true %}
+  <!-- ------------------------------------------------------------------ -->
+  <section>
+    <div class="section-head">
+      <span class="section-head__num">01</span>
+      <h2 class="section-head__title">Affiliations</h2>
+      <span class="section-head__aside">Present &amp; past</span>
+    </div>
 
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        {% include read-time.html content=post.content %}
+    <div class="logos">
+      {%- assign shown = "" -%}
+      {%- include logo.html id="inria" -%}
+      {%- include logo.html id="dga" -%}
+      {%- include logo.html id="aid" -%}
+      {%- include logo.html id="univ-angers" -%}
+      {%- include logo.html id="univ-rennes" -%}
+      {%- include logo.html id="uco" -%}
+      {%- include logo.html id="cnrs" -%}
+      {%- include logo.html id="ulille" -%}
+      {%- include logo.html id="utc" -%}
+      {%- include logo.html id="ubs" -%}
+      {%- include logo.html id="sudo" -%}
+      {%- include logo.html id="accenture" -%}
+    </div>
 
-        <!-- categories -->
-        {% if post.categories.size > 0 %}
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          {% for category in post.categories %}
-            {{ category }}
-            {%- unless forloop.last -%},{%- endunless -%}
-          {% endfor %}
-          </span>
-        {% endif %}
-      </div>
+    <p class="logos-legend">
+      The PhD is funded by the AID and run as a consortium between the DGA, the
+      University of Angers and the University of Rennes. Marks are shown to
+      identify affiliations and belong to their respective owners.
+    </p>
+  </section>
 
-      {% if post.pin %}
-      <div class="pin">
-        <i class="fas fa-thumbtack fa-fw"></i>
-        <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
-      </div>
-      {% endif %}
+  <!-- ------------------------------------------------------------------ -->
+  <section>
+    <div class="section-head">
+      <span class="section-head__num">02</span>
+      <h2 class="section-head__title">Topic map</h2>
+      <span class="section-head__aside"><a href="{{ '/topics/' | relative_url }}">All topics →</a></span>
+    </div>
 
-    </div> <!-- .post-meta -->
+    {% include graph.html %}
+  </section>
 
-  </div> <!-- .post-review -->
+  <!-- ------------------------------------------------------------------ -->
+  {%- if featured.size > 0 %}
+  <section>
+    <div class="section-head">
+      <span class="section-head__num">03</span>
+      <h2 class="section-head__title">Selected work</h2>
+    </div>
 
-{% endfor %}
+    <ul class="entries">
+      {%- for p in featured limit: 6 %}{% include entry.html post=p %}{% endfor -%}
+    </ul>
+  </section>
+  {%- endif %}
 
-</div> <!-- #post-list -->
+  <!-- ------------------------------------------------------------------ -->
+  <section>
+    <div class="section-head">
+      <span class="section-head__num">04</span>
+      <h2 class="section-head__title">Recent</h2>
+      <span class="section-head__aside"><a href="{{ '/notes/' | relative_url }}">Everything →</a></span>
+    </div>
 
-{% if paginator.total_pages > 0 %}
-  {% include post-paginator.html %}
-{% endif %}
+    <ul class="entries">
+      {%- for p in recent limit: 5 %}{% include entry.html post=p tags=false %}{% endfor -%}
+    </ul>
+  </section>
+
+</div>
