@@ -1,0 +1,75 @@
+// ---------------------------------------------------------------------------
+// Rouge syntax highlighting — low contrast on purpose. Code is read here, not
+// admired: structure comes from weight and a narrow hue range, not a rainbow.
+// ---------------------------------------------------------------------------
+
+.highlight {
+  margin: 1.5rem 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--paper-sunk);
+  overflow: hidden;
+
+  pre { margin: 0; border: 0; border-radius: 0; background: none; }
+
+  // Rouge emits a two-cell table when line numbers are on.
+  table { margin: 0; border: 0; font-family: var(--font-mono); font-size: 0.83rem; }
+  table td { padding: 0; border: 0; }
+  td.gutter, td.rouge-gutter { width: 1%; }
+
+  .lineno, .rouge-gutter pre {
+    padding-right: 0.9rem;
+    color: var(--ink-faint);
+    opacity: 0.55;
+    user-select: none;
+    text-align: right;
+  }
+
+  .rouge-code pre { padding-left: 0.9rem; border-left: 1px solid var(--rule); }
+}
+
+div.highlighter-rouge { margin: 1.5rem 0; }
+
+:root {
+  --syn-comment: #7c8494;
+  --syn-keyword: #0f4a9c;
+  --syn-string:  #4a6b3c;
+  --syn-number:  #8a5a2b;
+  --syn-name:    #14171f;
+  --syn-type:    #5a4a8a;
+  --syn-error:   #a33;
+}
+
+html[data-theme="dark"] {
+  --syn-comment: #6f7889;
+  --syn-keyword: #8fa9f0;
+  --syn-string:  #9ec48a;
+  --syn-number:  #dfae72;
+  --syn-name:    #e7e9ee;
+  --syn-type:    #b9a5ea;
+  --syn-error:   #e08c8c;
+}
+
+.highlight {
+  color: var(--syn-name);
+
+  .c, .cm, .c1, .cs, .cd, .cp { color: var(--syn-comment); font-style: italic; }
+  .k, .kc, .kd, .kn, .kp, .kr, .kt, .kv { color: var(--syn-keyword); font-weight: 600; }
+  .o, .ow { color: var(--ink-muted); }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: var(--syn-string); }
+  .m, .mf, .mh, .mi, .mo, .il, .mb, .mx { color: var(--syn-number); }
+  .nb, .bp { color: var(--syn-type); }
+  .nc, .nn, .ne { color: var(--syn-type); font-weight: 600; }
+  .nf, .fm { color: var(--syn-keyword); }
+  .nt { color: var(--syn-keyword); }
+  .na, .nv, .vc, .vg, .vi { color: var(--syn-name); }
+  .nd, .no, .ni { color: var(--syn-number); }
+  .err { color: var(--syn-error); }
+  .gd { color: var(--syn-error); }
+  .gi { color: var(--syn-string); }
+  .gh, .gu { color: var(--syn-comment); font-weight: 600; }
+  .gs { font-weight: 600; }
+  .ge { font-style: italic; }
+  .p, .pi { color: var(--ink-muted); }
+  .w { color: transparent; }
+}

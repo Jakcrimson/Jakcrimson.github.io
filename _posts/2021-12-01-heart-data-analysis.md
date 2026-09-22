@@ -1,19 +1,15 @@
 ---
-title: In depth analysis of medical data to unveil heart disease - EOT Assignement
-author:
-  name: Pierre Lague
-  link: https://github.com/Jakcrimson
-date: 2021-12-01 11:33:00 +0800
-categories: [Studies, UBS - L3 CMI, Statistics]
-tags: [statistics, analysis, SAS, French]
-math: true
-mermaid: true
+title: "In depth analysis of medical data to unveil heart disease - EOT Assignement"
+description: "In-depth statistical analysis of medical records to surface the factors associated with heart disease."
+date: 2021-12-01 11:33:00
+kind: coursework
+affiliation: ubs
+tags: [statistics, healthcare, sas]
+lang: fr
+repo: https://github.com/Jakcrimson
 image:
-  src: '/assets/posts/stat-heart-data/image.png'
-  width: 800
-  height: 600
+  src: "/assets/posts/stat-heart-data/image.png"
 ---
-
 ## Context
 This project was made during the first semester of the year 2021-2022, supervised by Prof. Salim Lardjane, UBS.
 The language used is SAS and the paper was redacted in french.

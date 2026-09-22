@@ -1,0 +1,191 @@
+# Career record. Single source of truth for /work/, /cv/ and the home page.
+# Every `institution` / `with` entry must match an `id` in _data/institutions.yml.
+#
+# `start` / `end` are YYYY-MM. `end: ` (empty) means "present".
+# `affiliation` is the key posts use to attach themselves to an entry. It is
+# separate from `institution` on purpose: an entry can name an organisation
+# without claiming every post filed under that organisation.
+
+current:
+  role: PhD Student — Machine Learning & Statistics
+  institution: inria
+  with: [dga, univ-angers]
+  location: Rennes, France
+  since: 2025-10-01
+experience:
+  - id: phd-inria
+    affiliation: inria
+    role: PhD Student — Machine Learning & Statistics
+    institution: inria
+    with: [dga, univ-angers, aid]
+    kind: research
+    start: 2025-10-01
+    end:
+    location: Rennes, France
+    summary: >-
+      Artificial intelligence for the optimization of the mechanical durability of
+      systems subjected to severe vibratory loads. Funded by the AID (Agence de
+      l'innovation de défense), run as a consortium between the DGA, the University
+      of Angers and the University of Rennes.
+    highlights:
+      - Physics-informed neural networks for fatigue and damage estimation
+      - Time, frequency and time–frequency characterisation of vibratory signals
+      - Military application — durability under severe vibratory loading
+
+  - id: teaching-uco
+    affiliation: uco
+    role: Lecturer — Machine Learning, Bachelor 3
+    institution: uco
+    kind: teaching
+    start: 2026-09-01
+    end:
+    location: Angers, France
+    summary: >-
+      Ten hours of machine learning for third-year bachelor students: lectures
+      and lab sessions, taking the class from the general shape of a supervised
+      learning problem through to convolutional networks, U-Net and variational
+      auto-encoders. Taught in French.
+    highlights:
+      - Course designed and written from scratch — 120 slides over four sessions
+      - Lectures delivered; lab sheets in preparation
+
+  - id: sudo-apprenticeship
+    affiliation: sudo
+    role: ML Engineer — apprenticeship
+    institution: sudo
+    kind: industry
+    start: 2024-09-01
+    end: 2025-08-01
+    location: Lille, France
+    summary: >-
+      R&D team at Sudo Group, working on machine learning for cloud cost
+      optimization. Full autonomy on leading the research and implementing the
+      core features that came out of it.
+    highlights:
+      - Time-series forecasting for cloud commitment recommendation
+      - Led the research track and shipped the resulting production features
+
+  - id: cnrs-osur
+    affiliation: osur
+    role: AI Research Engineer — intern
+    institution: osur
+    with: [cnrs]
+    kind: research
+    start: 2023-01-01
+    end: 2023-02-01
+    location: Rennes, France
+    summary: >-
+      Objective performance evaluation of a newly developed machine learning
+      algorithm for 3D point cloud classification, benchmarked on urban
+      environment LiDAR data.
+    highlights:
+      - Benchmark design for 3D point cloud classification
+      - Urban LiDAR data, objective evaluation protocol
+
+  - id: cnrs-letg
+    affiliation: letg
+    role: AI Research Engineer — intern
+    institution: letg
+    with: [cnrs]
+    kind: research
+    start: 2022-05-01
+    end: 2022-08-01
+    location: Rennes, France
+    summary: >-
+      State of the art and experimental study on semantic segmentation for ultra
+      high resolution UAV imagery, funded by the National Research Institute.
+    highlights:
+      - Semantic segmentation of ultra-high-resolution drone imagery
+      - State of the art review and experimental comparison
+
+  - id: tutoring
+    affiliation: tutoring
+    role: Student Tutor — Mathematics, Computer Science, English
+    institution: independent
+    kind: teaching
+    start: 2021-09-01
+    end: 2022-05-01
+    location: France
+    summary: >-
+      One-to-one tutoring in mathematics, computer science and English.
+    highlights: []
+
+  - id: accenture
+    affiliation: accenture
+    role: AI Engineer — intern
+    institution: accenture
+    kind: industry
+    start: 2021-04-01
+    end: 2021-07-01
+    location: Nantes, France
+    summary: >-
+      Built a predictive model for road surface condition as part of Accenture
+      Technology's data science practice.
+    highlights:
+      - Predictive modelling of road surface condition
+      - Industrial data pipeline on Dataiku
+
+education:
+  - id: msc-ulille
+    affiliation: ulille
+    degree: MSc Machine Learning
+    institution: ulille
+    start: 2023-09-01
+    end: 2025-08-01
+    location: Lille, France
+    honours: With honours — ranked 4th/16 (year 1), 3rd/16 (year 2)
+    summary: >-
+      Two-year research-oriented master's in machine learning: reinforcement
+      learning, multi-agent systems, NLP, deep learning, optimisation and
+      secure systems.
+    thesis: Load-balancing and Task Allocation in Dynamic Multi-Agent Systems
+
+  - id: msc-utc
+    affiliation: utc
+    degree: MSc Complex Systems Engineering — year 1
+    institution: utc
+    start: 2022-09-01
+    end: 2023-06-01
+    location: Compiègne, France
+    honours: With honours
+    summary: >-
+      First year of the Complex Systems Engineering master's: differential
+      calculus, dynamical systems and stability, simulation of dynamic systems.
+    thesis:
+
+  # NOTE — the CV reads "Sept. 2021 - June 2023" for the UBS bachelor, which overlaps
+  # the UTC year above. The coursework published here is all L3 / CMI from 2021-22,
+  # so the final year is what is shown. Adjust `start` if the full BSc span is wanted.
+  - id: bsc-ubs
+    affiliation: ubs
+    degree: BSc Computer Science — CMI programme
+    institution: ubs
+    start: 2021-09-01
+    end: 2022-06-01
+    location: Vannes, France
+    honours: Graduated class major
+    summary: >-
+      Cursus Master en Ingénierie in computer science: statistics, data mining,
+      software engineering and the first machine learning coursework.
+    thesis:
+
+languages:
+  - name: French
+    level: Native
+  - name: English
+    level: Bilingual — TOEIC 980
+
+skills:
+  - group: Research
+    items:
+      - Physics-informed neural networks
+      - Extreme value statistics
+      - Explainable AI
+      - Reinforcement learning / MARL
+      - Mechanical physics & vibratory signals
+      - Long-term project lead
+  - group: Programming
+    items:
+      - Python
+      - R
+      - C++

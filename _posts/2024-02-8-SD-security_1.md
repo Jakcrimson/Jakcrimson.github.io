@@ -1,19 +1,17 @@
 ---
-title: Cybersecurity1 - Introduction to secure systems - University of Lille
-author:
-  name: Pierre Lague & François Muller (@franzele21)
-  link: 
-date: 2024-02-08 09:45:00 +0800
-categories: [Studies, U-Lille]
-tags: [Python, Security, C]
-math: true
-mermaid: true
+title: "Cybersecurity1 - Introduction to secure systems - University of Lille"
+description: "Introduction to secure systems, part 1: memory, privilege and the shape of an exploit."
+date: 2024-02-08 09:45:00
+kind: coursework
+affiliation: ulille
+tags: [cybersecurity, cpp, python]
+lang: en
+authors:
+  - "Pierre Lague"
+  - "François Muller (@franzele21)"
 image:
-  src: '/assets/posts/security/header.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/security/header.jpg"
 ---
-
 # Cybersecurity Class🛡️
 
 ## Overview

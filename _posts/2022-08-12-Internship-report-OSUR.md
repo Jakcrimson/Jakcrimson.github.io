@@ -1,19 +1,14 @@
 ---
-title: Internship - Objective Evaluation on Benchmarked Urban Environment LiDAR Data
-author:
-  name: Pierre Lague
-  link: 
-date: 2023-01-21 09:45:00 +0800
-categories: [Internships]
-tags: [ML, Python, 3D Data, English]
-math: true
-mermaid: true
+title: "Internship - Objective Evaluation on Benchmarked Urban Environment LiDAR Data"
+description: "Objective evaluation of a 3D point cloud classification algorithm on benchmarked urban LiDAR data, at CNRS OSUR."
+date: 2023-01-21 09:45:00
+kind: internship
+affiliation: osur
+tags: [machine-learning, remote-sensing, python]
+lang: en
 image:
-  src: '/assets/posts/internship-osur/3d_point_cloud.png'
-  width: 800
-  height: 600
+  src: "/assets/posts/internship-osur/3d_point_cloud.png"
 ---
-
 ## Context
 
 This internship took place from the 21st of January 2022 to the 20th of February 2022. It's part of the ST01 module at the UTC, FR.

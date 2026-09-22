@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="wrap">
+  <header class="pagehead">
+    {%- if page.kicker %}<span class="label pagehead__kicker">{{ page.kicker }}</span>{% endif %}
+    <h1 class="pagehead__title">{{ page.title }}</h1>
+    {%- if page.lede %}<p class="pagehead__lede">{{ page.lede }}</p>{% endif %}
+  </header>
+
+  {%- for g in site.data.taxonomy.groups -%}
+    {%- assign topics = site.data.taxonomy.topics | where: "group", g.id -%}
+    {%- assign used = 0 -%}
+    {%- for t in topics %}{% assign n = site.tags[t.id] | size %}{% if n > 0 %}{% assign used = used | plus: 1 %}{% endif %}{% endfor -%}
+    {%- if used > 0 %}
+    <section class="topicgroup">
+      <div class="section-head">
+        <span class="section-head__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        <h2 class="section-head__title">{{ g.label }}</h2>
+        <span class="section-head__aside">{{ g.blurb }}</span>
+      </div>
+
+      <div class="topicgrid">
+        {%- for t in topics -%}
+          {%- assign n = site.tags[t.id] | size -%}
+          {%- if n > 0 %}
+          <a class="topiccard" href="{{ '/topics/' | append: t.id | append: '/' | relative_url }}">
+            <span class="topiccard__head">
+              <span class="topiccard__name">{{ t.label }}</span>
+              <span class="topiccard__count">{{ n }}</span>
+            </span>
+            {%- if t.note %}<p class="topiccard__note">{{ t.note }}</p>{% endif %}
+          </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </section>
+    {%- endif -%}
+  {%- endfor -%}
+</div>

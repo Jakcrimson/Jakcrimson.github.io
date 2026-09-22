@@ -1,144 +1,94 @@
 ---
-layout: page
-refactor: true
-pannel_includes:
-  - toc
-tail_includes:
-  - related-posts
-  - post-nav
-  - comments
+layout: default
 ---
 
-{% include lang.html %}
+{%- assign kind = site.data.taxonomy.kinds | where: "id", page.kind | first -%}
+{%- assign inst = site.data.institutions | where: "id", page.affiliation | first -%}
 
-{% if page.image.src %}
-  {% capture bg %}
-    {% unless page.image.no_bg %}{{ 'bg' }}{% endunless %}
-  {% endcapture %}
-  <img src="{{ page.image.src }}" class="preview-img {{ bg | strip }}"
-      alt="{{ page.image.alt | default: "Preview Image" }}"
-
-      {% if page.image.width %}
-        width="{{ page.image.width }}"
-      {% elsif page.image.w %}
-        width="{{ page.image.w }}"
-      {% endif %}
-
-      {% if page.image.height %}
-        height="{{ page.image.height }}"
-      {% elsif page.image.h %}
-        height="{{ page.image.h }}"
-      {% endif %}>
-{% endif %}
-
-<h1 data-toc-skip>{{ page.title }}</h1>
-
-<div class="post-meta text-muted">
-
-  <!-- author -->
-  <div>
-    {% capture author_name %}{{ page.author.name | default: site.social.name }}{% endcapture %}
-    {% assign author_link = nil %}
-
-    {% if page.author.link %}
-      {% assign author_link = page.author.link %}
-    {% elsif author_name == site.social.name %}
-      {% assign author_link = site.social.links[0] %}
-    {% endif %}
-
-    {{ site.data.locales[lang].post.written_by }}
-    <em>
-      {% if author_link %}
-        <a href="{{ author_link }}">{{ author_name }}</a>
-      {% else %}
-        {{ author_name }}
-      {% endif %}
-    </em>
-  </div>
-
-  <div class="d-flex">
+<div class="wrap">
+  <article class="article">
     <div>
-      <!-- published date -->
-      <span>
-        {{ site.data.locales[lang].post.posted }}
-        {% include timeago.html date=page.date tooltip=true %}
-      </span>
+      <header class="posthead">
+        <div class="posthead__meta">
+          {%- if kind %}<span class="entry__kind">{{ kind.label }}</span><span class="posthead__sep">·</span>{% endif %}
+          <time class="entry__date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+          {%- if page.lang and page.lang != 'en' %}<span class="posthead__sep">·</span><span class="label">{{ page.lang | upcase }}</span>{% endif %}
+        </div>
 
-      <!-- lastmod date -->
-      {% if page.last_modified_at %}
-      <span>
-        {{ site.data.locales[lang].post.updated }}
-        {% include timeago.html date=page.last_modified_at tooltip=true %}
-      </span>
-      {% endif %}
+        <h1 class="posthead__title">{{ page.title }}</h1>
 
-      <!-- read time -->
-      {% include read-time.html content=content prompt=true %}
+        {%- if page.description %}<p class="posthead__desc">{{ page.description }}</p>{% endif %}
 
-      <!-- page views -->
-      {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
-      <span>
-        <em id="pv" class="pageviews">
-          <i class="fas fa-spinner fa-spin fa-fw"></i>
-        </em>
-        {{ site.data.locales[lang].post.pageview_measure }}
-      </span>
-      {% endif %}
+        <p class="posthead__byline">
+          {%- if page.authors -%}
+            {{ page.authors | join: " · " }}
+          {%- else -%}
+            {{ site.social.name }}
+          {%- endif -%}
+          {%- if inst and inst.id != 'independent' %} — {% if inst.url %}<a href="{{ inst.url }}" target="_blank" rel="noopener">{{ inst.name }}</a>{% else %}{{ inst.name }}{% endif %}{% endif %}
+          {%- if page.repo %} · <a href="{{ page.repo }}" target="_blank" rel="noopener">Source</a>{% endif %}
+        </p>
+
+        <div class="posthead__foot">
+          {%- if page.tags.size > 0 %}
+          <ul class="chip-row">
+            {%- for t in page.tags -%}
+              {%- assign topic = site.data.taxonomy.topics | where: "id", t | first -%}
+              {%- if topic %}<li><a class="chip chip--{{ topic.group }}" href="{{ '/topics/' | append: t | append: '/' | relative_url }}">{{ topic.label }}</a></li>{% endif -%}
+            {%- endfor -%}
+          </ul>
+          {%- endif %}
+        </div>
+      </header>
+
+      <div class="prose">
+        {{ content }}
+      </div>
+
+      <footer class="postfoot">
+        {%- assign rel = "" | split: "" -%}
+        {%- for p in site.posts -%}
+          {%- if p.url != page.url -%}
+            {%- assign shared = 0 -%}
+            {%- for t in p.tags -%}{%- if page.tags contains t -%}{%- assign shared = shared | plus: 1 -%}{%- endif -%}{%- endfor -%}
+            {%- if shared > 1 or p.affiliation == page.affiliation and shared > 0 -%}
+              {%- assign rel = rel | push: p -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if rel.size > 0 %}
+        <section class="related">
+          <div class="section-head">
+            <span class="section-head__num">↳</span>
+            <h2 class="section-head__title">Related</h2>
+          </div>
+          <ul class="entries">
+            {%- for p in rel limit: 4 %}{% include entry.html post=p tags=false %}{% endfor -%}
+          </ul>
+        </section>
+        {%- endif %}
+
+        <nav class="postnav" aria-label="More work">
+          {%- if page.previous %}
+          <a class="postnav__item" href="{{ page.previous.url | relative_url }}">
+            <span class="label postnav__dir">← Previous</span>
+            <span class="postnav__title">{{ page.previous.title }}</span>
+          </a>
+          {%- endif %}
+          {%- if page.next %}
+          <a class="postnav__item postnav__item--next" href="{{ page.next.url | relative_url }}">
+            <span class="label postnav__dir">Next →</span>
+            <span class="postnav__title">{{ page.next.title }}</span>
+          </a>
+          {%- endif %}
+        </nav>
+      </footer>
     </div>
 
-  </div> <!-- .d-flex -->
-
-</div> <!-- .post-meta -->
-
-<div class="post-content">
-  {{ content }}
+    <aside class="toc" id="toc" hidden>
+      <h2 class="label toc__title">On this page</h2>
+      <nav aria-label="Table of contents"><ul></ul></nav>
+    </aside>
+  </article>
 </div>
-
-<div class="post-tail-wrapper text-muted">
-
-  <!-- categories -->
-  {% if page.categories.size > 0 %}
-  <div class="post-meta mb-3">
-    <i class="far fa-folder-open fa-fw mr-1"></i>
-    {% for category in page.categories %}
-      <a href='{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/'>{{ category }}</a>
-      {%- unless forloop.last -%}, {%- endunless -%}
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  <!-- tags -->
-  {% if page.tags.size > 0 %}
-  <div class="post-tags">
-    <i class="fa fa-tags fa-fw mr-1"></i>
-      {% for tag in page.tags %}
-      <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
-          class="post-tag no-text-decoration" >
-        {{- tag -}}
-      </a>
-      {% endfor %}
-  </div>
-  {% endif %}
-
-  <div class="post-tail-bottom
-    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
-    <div class="license-wrapper">
-
-      {% if site.data.locales[lang].copyright.license.template %}
-
-        {% capture _replacement %}
-        <a href="{{ site.data.locales[lang].copyright.license.link }}">
-          {{ site.data.locales[lang].copyright.license.name }}
-        </a>
-        {% endcapture %}
-
-        {{ site.data.locales[lang].copyright.license.template | replace: ':LICENSE_NAME', _replacement }}
-
-      {% endif %}
-    </div>
-
-    {% include post-sharing.html %}
-
-  </div><!-- .post-tail-bottom -->
-
-</div><!-- div.post-tail-wrapper -->

@@ -1,19 +1,17 @@
 ---
-title: Project XSA (X Sentiment Analysis) - University of Lille
-author:
-  name: Pierre Lague & Paul-Henri Icher
-  link: 
-date: 2023-12-19 09:45:00 +0800
-categories: [Studies, U-Lille, Python]
-tags: [Python, ML, NLP]
-math: true
-mermaid: true
+title: "Project XSA (X Sentiment Analysis) - University of Lille"
+description: "Project XSA: sentiment analysis on X, from data collection through to a deployed classifier."
+date: 2023-12-19 09:45:00
+kind: project
+affiliation: ulille
+tags: [nlp, machine-learning, python]
+lang: en
+authors:
+  - "Pierre Lague"
+  - "Paul-Henri Icher"
 image:
-  src: '/assets/posts/pjeb_XSA/header.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/pjeb_XSA/header.jpg"
 ---
-
 # XSA - (X Sentiment Analysis) 📊🐦
 
 ## Overview
@@ -46,7 +44,7 @@ Contributions are welcome! If you have any suggestions, improvements, or feature
 
 ## License 📝
 
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the MIT License.
 
 ## Acknowledgments 🙌
 

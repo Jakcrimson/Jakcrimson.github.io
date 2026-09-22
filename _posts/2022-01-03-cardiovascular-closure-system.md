@@ -1,19 +1,15 @@
 ---
-title: Statistical Analysis of Cardiovascular Closure Systems related to health state 1 month after operation - EOT Assignement
-author:
-  name: Pierre Lague
-  link: https://github.com/Jakcrimson
-date: 2022-03-28 11:33:00 +0800
-categories: [Studies, UBS - L3 CMI, Statistics]
-tags: [statistics, analysis, SAS, French]
-math: true
-mermaid: true
+title: "Statistical Analysis of Cardiovascular Closure Systems related to health state 1 month after operation - EOT Assignement"
+description: "Statistical analysis of cardiovascular closure systems against patient health one month after operation."
+date: 2022-03-28 11:33:00
+kind: coursework
+affiliation: ubs
+tags: [statistics, healthcare, sas]
+lang: fr
+repo: https://github.com/Jakcrimson
 image:
-  src: '/assets/posts/vascular-closure-system/background.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/vascular-closure-system/background.jpg"
 ---
-
 ## Context
 This project was made during the second semester of the year 2021-2022, supervised by Mrs Beatrice GUYOMAR'CH (CHU Nantes).
 The language used is SAS and the paper was redacted in french.

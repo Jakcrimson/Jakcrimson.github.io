@@ -1,0 +1,11 @@
+# Primary navigation. Order is the order shown.
+- title: Research
+  url: /research/
+- title: Work
+  url: /work/
+- title: Notes
+  url: /notes/
+- title: CV
+  url: /cv/
+- title: About
+  url: /about/

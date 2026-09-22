@@ -1,19 +1,15 @@
 ---
-title: Apprenticeship Thesis - Leveraging Machine Learning for Dynamic and Intelligent Cloud Commitment Recommendations
-author:
-  name: Pierre Lague
-  link: 
-date: 2025-06-24 09:45:00 +0800
-categories: [Studies, U-Lille,]
-tags: [Python, ML, Time Series]
-math: true
-mermaid: true
+title: "Apprenticeship Thesis - Leveraging Machine Learning for Dynamic and Intelligent Cloud Commitment Recommendations"
+description: "Apprenticeship thesis: machine learning for dynamic and intelligent cloud commitment recommendations, at Sudo Group."
+date: 2025-06-24 09:45:00
+kind: thesis
+affiliation: sudo
+tags: [machine-learning, time-series, cloud, python]
+lang: en
+featured: true
 image:
-  src: 'assets\/osts/stat-heart-data/image.png'
-  width: 800
-  height: 600
+  src: "/assets/posts/reviews/phd_logo.png"
 ---
-
 This page contains my apprenticeship thesis, titled "Leveraging Machine Learning for Dynamic and Intelligent Cloud Commitment Recommendations". It was supervised by Mr. Mike Douieb, CEO of Sudo Group, and reviewed by Pr. Marc Tommasi (University of Lille).
 
 All contents are strictly the property of Sudo Group, any plagiarism and/or copy will result in legal actions.

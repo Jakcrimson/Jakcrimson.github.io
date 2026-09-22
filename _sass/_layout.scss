@@ -1,0 +1,217 @@
+// ---------------------------------------------------------------------------
+// Page shell: masthead, navigation, content wells, footer.
+// ---------------------------------------------------------------------------
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--measure-wide);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.wrap--prose { max-width: var(--measure); }
+
+// -- masthead ---------------------------------------------------------------
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: 62px;
+  }
+
+  // The identity mark: initials in a hairline box, name alongside.
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--ink);
+    flex: none;
+
+    &:hover { color: var(--ink); text-decoration: none; }
+    &:hover .masthead__sigil { border-color: var(--eu-blue); color: var(--eu-blue); }
+  }
+
+  &__sigil {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink-muted);
+    transition: border-color var(--transition), color var(--transition);
+  }
+
+  &__name {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    margin-left: auto;
+  }
+
+  &__tools {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex: none;
+  }
+}
+
+.navlink {
+  position: relative;
+  padding: 0.35rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  color: var(--ink-muted);
+  white-space: nowrap;
+
+  &:hover { color: var(--ink); text-decoration: none; }
+
+  &[aria-current] {
+    color: var(--ink);
+
+    // Gold underline: the "you are here" marker, matching the "current" idiom.
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -1px;
+      height: 2px;
+      background: var(--eu-gold);
+    }
+  }
+}
+
+.iconbtn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+
+  &:hover { color: var(--ink); border-color: var(--rule); }
+  svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+}
+
+// Mobile nav: the links collapse into a disclosure panel.
+.navtoggle { display: none; }
+
+@media (max-width: 47.99em) {
+  .masthead__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.4rem var(--gutter) 0.9rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+
+  .masthead__nav[hidden] { display: none; }
+
+  .navlink {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.95rem;
+
+    &[aria-current]::after { inset: auto auto 0.6rem 0; right: auto; width: 18px; }
+  }
+
+  .navtoggle { display: grid; }
+}
+
+// -- content ----------------------------------------------------------------
+.main { flex: 1 0 auto; padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3.5rem, 8vw, 6rem); }
+
+.stack > * + * { margin-top: clamp(3rem, 7vw, 5rem); }
+
+// -- page header ------------------------------------------------------------
+.pagehead {
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+
+  &__kicker { display: block; margin-bottom: 0.7rem; }
+
+  &__title { margin: 0 0 0.6rem; }
+
+  &__lede {
+    max-width: 40rem;
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 1.0625rem;
+  }
+}
+
+// -- footer -----------------------------------------------------------------
+.footer {
+  flex: none;
+  padding-block: 2.5rem 3rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6rem 2rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1rem;
+    margin-left: auto;
+  }
+
+  a { color: var(--ink-muted); }
+  a:hover { color: var(--eu-blue); }
+
+  &__note {
+    width: 100%;
+    margin-top: 1.4rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+}

@@ -1,19 +1,21 @@
 ---
-title: Tamagotchi in Java - EOT Assignment
-author:
-  name: Pierre Lague - Antoine Adam - Sylvina Buche - Guillaume Cobat - Yoann Dewilde
-  link: https://github.com/Jakcrimson/Tamagotchi
-date: 2021-12-08 11:33:00 +0800
-categories: [Studies, UBS - L3 CMI, Software Engineering]
-tags: [Java, Software development, French]
-math: true
-mermaid: true
+title: "Tamagotchi in Java - EOT Assignment"
+description: "A five-person Java project: object design, state machines and a playable Tamagotchi."
+date: 2021-12-08 11:33:00
+kind: coursework
+affiliation: ubs
+tags: [software-engineering, java]
+lang: fr
+authors:
+  - "Pierre Lague"
+  - "Antoine Adam"
+  - "Sylvina Buche"
+  - "Guillaume Cobat"
+  - "Yoann Dewilde"
+repo: https://github.com/Jakcrimson/Tamagotchi
 image:
-  src: '/assets/posts/tamagotchi/menu.png'
-  width: 800
-  height: 600
+  src: "/assets/posts/tamagotchi/menu.png"
 ---
-
 ## Context
 
 This project was conducted during the first semester of the uni. year 2021-2022. It's a remake of the famous "egg-watch" games called "Tamagotchi". We've called it "Keneil" ("Friend" in old Brittany language).

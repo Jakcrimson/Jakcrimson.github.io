@@ -1,19 +1,17 @@
 ---
-title: Cybersecurity2 - Introduction to secure systems - University of Lille
-author:
-  name: Pierre Lague & Paul-Henri ICHER
-  link: 
-date: 2024-02-10 09:45:00 +0800
-categories: [Studies, U-Lille]
-tags: [Python, Security, C]
-math: true
-mermaid: true
+title: "Cybersecurity2 - Introduction to secure systems - University of Lille"
+description: "Introduction to secure systems, part 2: buffer overflows and defensive compilation."
+date: 2024-02-10 09:45:00
+kind: coursework
+affiliation: ulille
+tags: [cybersecurity, cpp, python]
+lang: en
+authors:
+  - "Pierre Lague"
+  - "Paul-Henri ICHER"
 image:
-  src: '/assets/posts/security/header.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/security/header.jpg"
 ---
-
 # Cybersecurity Class🛡️
 
 ## Overview

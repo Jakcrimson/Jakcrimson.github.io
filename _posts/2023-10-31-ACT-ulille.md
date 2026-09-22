@@ -1,19 +1,17 @@
 ---
-title: Algorithms and Complexity - University of Lille
-author:
-  name: Pierre Lague & Romain Lecleire
-  link: 
-date: 2023-10-31 09:45:00 +0800
-categories: [Studies, U-Lille, Algorithmic]
-tags: [Python, Complexity, Algorithmic]
-math: true
-mermaid: true
+title: "Algorithms and Complexity - University of Lille"
+description: "Algorithms and complexity: designing algorithms and proving what they cost."
+date: 2023-10-31 09:45:00
+kind: coursework
+affiliation: ulille
+tags: [algorithms, python]
+lang: en
+authors:
+  - "Pierre Lague"
+  - "Romain Lecleire"
 image:
-  src: '/assets/posts/ACT_ulille/ACT_header.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/ACT_ulille/ACT_header.jpg"
 ---
-
 # The Goal of "Algorithmic and Complexity" 🧮
 
 This class aims to train on finding a "good" algorithm for a given algorithmic problem. Which raises several questions:

@@ -1,0 +1,37 @@
+{%- comment -%}
+  Renders one institution's mark.
+
+    {% include logo.html id="inria" %}
+    {% include logo.html id="inria" size="sm" link=false %}
+
+  If the SVG named in _data/institutions.yml has not been added to
+  assets/img/logos/ yet, this falls back to a typographic wordmark in the same
+  box — so the page is never waiting on an asset to look finished.
+{%- endcomment -%}
+
+{%- assign inst = site.data.institutions | where: "id", include.id | first -%}
+{%- if inst -%}
+  {%- assign present = site.static_files | map: "path" | join: "," -%}
+  {%- assign has_logo = false -%}
+  {%- if inst.logo and inst.logo != '' -%}
+    {%- if present contains inst.logo -%}{%- assign has_logo = true -%}{%- endif -%}
+  {%- endif -%}
+
+  {%- assign cls = 'logo' -%}
+  {%- if include.size == 'sm' -%}{%- assign cls = 'logo logo--sm' -%}{%- endif -%}
+
+  {%- if inst.url and include.link != false -%}
+    <a class="{{ cls }}" href="{{ inst.url }}" target="_blank" rel="noopener"
+       title="{{ inst.full | default: inst.name }}">
+  {%- else -%}
+    <span class="{{ cls }}" title="{{ inst.full | default: inst.name }}">
+  {%- endif -%}
+
+  {%- if has_logo -%}
+    <img src="{{ inst.logo | relative_url }}" alt="{{ inst.name }}" decoding="async">
+  {%- else -%}
+    <span class="logo__word">{{ inst.short | default: inst.name }}</span>
+  {%- endif -%}
+
+  {%- if inst.url and include.link != false -%}</a>{%- else -%}</span>{%- endif -%}
+{%- endif -%}

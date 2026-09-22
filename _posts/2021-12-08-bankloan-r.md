@@ -1,19 +1,18 @@
 ---
-title: Bank loan payment default prediction - EOT Assignement
-author:
-  name: Pierre Lague & Victor Haguet
-  link: https://github.com/Jakcrimson
-date: 2021-11-21 11:33:00 +0800
-categories: [Studies, UBS - L3 CMI, Statistics]
-tags: [machine learning, English, R]
-math: true
-mermaid: true
+title: "Bank loan payment default prediction - EOT Assignement"
+description: "Predicting bank loan payment default in R, from exploratory analysis through to model comparison."
+date: 2021-11-21 11:33:00
+kind: coursework
+affiliation: ubs
+tags: [machine-learning, statistics, finance, r]
+lang: en
+authors:
+  - "Pierre Lague"
+  - "Victor Haguet"
+repo: https://github.com/Jakcrimson
 image:
-  src: '/assets/posts/bankloan-R/image.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/bankloan-R/image.jpg"
 ---
-
 ## Context
 This project is the end of term assignment in the Discriminant Analysis course led by Prof. Salim Lardjane, UBS.
 

@@ -1,19 +1,14 @@
 ---
-title: Project - State of the Art on Intelligence to manipulate Covid-19 Data.
-author:
-  name: Pierre Lague
-  link: 
-date: 2022-08-26 09:45:00 +0800
-categories: [University, L3 CMI]
-tags: [ML, DataIku, Python, French]
-math: true
-mermaid: true
+title: "Project - State of the Art on Intelligence to manipulate Covid-19 Data."
+description: "State of the art on the methods used to exploit Covid-19 data, with a Dataiku pipeline built on top."
+date: 2022-08-26 09:45:00
+kind: project
+affiliation: ubs
+tags: [machine-learning, healthcare, python, dataiku]
+lang: fr
 image:
-  src: '/assets/posts/projet_cmi/header.jpg'
-  width: 800
-  height: 600
+  src: "/assets/posts/projet_cmi/header.jpg"
 ---
-
 ## Context
 Le but du projet intégrateur CMI en sciences des données était d'utiliser le machine learning pour l'étude de l'évolution du COVID-19 à l'échelle mondiale.
 
