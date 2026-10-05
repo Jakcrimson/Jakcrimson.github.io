@@ -11,6 +11,10 @@ authors:
   - "Romain Lecleire"
 image:
   src: "/assets/posts/ACT_ulille/ACT_header.jpg"
+document:
+  src: "/assets/posts/ACT_ulille/COMPTE_RENDU_ACT_TP1.pdf"
+  size: "404 KB"
+  id: "compte-rendu-act-tp1"
 ---
 # The Goal of "Algorithmic and Complexity" 🧮
 
@@ -31,37 +35,6 @@ The course's objective is to prepare you to answer these challenging questions, 
 - 📊 Analyze this solution: correctness, complexity.
 
 The first document is the pdf report of the first assignement on basic algorithmic problems and computability with different notions of complexity (space and time).
-
-<html>
-  <body>
-    <iframe src="/assets/posts/ACT_ulille/COMPTE_RENDU_ACT_TP1.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
-
 The second deocument is the pdf report of the second assignement relating the use of different programming paradigms (Divise to Reign, Dynamix Programming, Greedy etc.)
-
-<html>
-  <body>
-    <iframe src="/assets/posts/ACT_ulille/COMPTE_RENDU_ACT_TP2.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
-
 The following document is the pdf report of the third assignement relating the use of polynomial reductions applied to the BinPacking problem.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/ACT_ulille/COMPTE_RENDU_ACT_TP3.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
-
 And finally, the ultimate, the last, the absolute paroxism of this class : heuristics and meta-heuristics. Took us a while but here we are !
-
-<html>
-  <body>
-    <iframe src="/assets/posts/ACT_ulille/COMPTE_RENDU_ACT_HEURISTICS.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>

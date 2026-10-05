@@ -9,6 +9,10 @@ lang: en
 featured: true
 image:
   src: "/assets/posts/internship-letg/header.jpeg"
+document:
+  src: "/assets/posts/internship-letg/Internship_Report___2022.pdf"
+  size: "653 KB"
+  id: "internship-report-2022"
 ---
 ## Context
 
@@ -17,20 +21,4 @@ This internship took place from the 1st of May 2022 to the 12th of August 2022. 
 I've had the opportunity to do my internship in the LETG LAB in Rennes, FR. My tutor was Mrs. Javiera Castillo, PhD in Semantic Segmentation (Currently Post-Doc in Switzerland).
 
 The rest of the context, as well as my work during the internship is described in the pdf report.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/internship-letg/Internship_Report___2022.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
-
 Additionnal document : the pdf I used during the oral defence of the internship.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/internship-letg/soutenance_pdf.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
-

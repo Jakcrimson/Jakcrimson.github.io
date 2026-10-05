@@ -39,6 +39,10 @@
   --group-domain: #4a6b63;
   --group-tool:   #8a6a3c;
 
+  // Callout rules in the worked-exam posts.
+  --accent-answer: #2f6b43;
+  --accent-given:  #9a5b2a;
+
   --selection:    rgba(0, 51, 153, 0.14);
 
   // -- type -----------------------------------------------------------------
@@ -83,6 +87,9 @@ html[data-theme="dark"] {
   --group-method: #7e9bd8;
   --group-domain: #7ba79b;
   --group-tool:   #c2a06a;
+
+  --accent-answer: #6fb88a;
+  --accent-given:  #d09a60;
 
   --selection:    rgba(143, 169, 240, 0.22);
 

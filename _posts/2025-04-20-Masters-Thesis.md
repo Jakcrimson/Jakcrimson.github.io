@@ -9,14 +9,11 @@ lang: en
 featured: true
 image:
   src: "/assets/posts/SMA/header.jpg"
+document:
+  src: "/assets/posts/thesis/MemoireMaster_Pierre_Lague.pdf"
+  size: "990 KB"
+  id: "memoiremaster-pierre-lague"
 ---
 This page contains my thesis, titled "Load-balancing and Task Allocation in Dynamic Multi-Agent Systems". It was supervised by Pr. Maxime Morge (univ. Lyon 1).
 
 Any feedback is greatly appreciated. You can reach me at pierre.lague@protonmail.com.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/thesis/MemoireMaster_Pierre_Lague.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>

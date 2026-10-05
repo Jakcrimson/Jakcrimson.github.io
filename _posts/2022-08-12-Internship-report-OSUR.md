@@ -8,6 +8,10 @@ tags: [machine-learning, remote-sensing, python]
 lang: en
 image:
   src: "/assets/posts/internship-osur/3d_point_cloud.png"
+document:
+  src: "/assets/posts/internship-osur/LAGUE_Internship_Report_ST01.pdf"
+  size: "14.2 MB"
+  id: "lague-internship-report-st01"
 ---
 ## Context
 
@@ -17,20 +21,4 @@ The report was redacted by me during the internship. I was advised by the intern
 This report presents the work undertaken during a 1 month internship with the "Plateforme LiDAR" team at the
 "Observatoire des Sciences de l’Univers de Rennes" (OSUR) under the supervision of Mathilde Letard and Paul
 Leroy.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/internship-osur/LAGUE_Internship_Report_ST01.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
-
 Additionnal document : the pdf I used during the oral defence of the internship.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/internship-osur/Soutenance_ST01_LAGUE_final.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
-

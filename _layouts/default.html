@@ -14,7 +14,11 @@
     {% include footer.html %}
   </div>
 
+  {% include analytics.html %}
   <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  {%- if page.layout == 'post' and site.analytics.goatcounter and site.analytics.goatcounter != '' %}
+  <script src="{{ '/assets/js/stats.js' | relative_url }}" defer></script>
+  {%- endif %}
   {%- if page.layout == 'home' %}
   <script src="{{ '/assets/js/graph.js' | relative_url }}" defer></script>
   {%- endif %}

@@ -8,6 +8,10 @@ tags: [machine-learning, python, dataiku]
 lang: fr
 image:
   src: "/assets/posts/internship-accenture/header.png"
+document:
+  src: "/assets/posts/internship-accenture/intership-report.pdf"
+  size: "1.9 MB"
+  id: "intership-report"
 ---
 ## Context
 
@@ -18,11 +22,3 @@ I've had the opportunity to do my internship in the Accenture Technology center 
 The rest of the context, as well as my work during the internship is described in the pdf report.
 
 **WIP : i'm currently working on translating the whole document in english. For the moment it's only available in french which was the main language for the report**
-
-
-<html>
-  <body>
-    <iframe src="/assets/posts/internship-accenture/intership-report.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>

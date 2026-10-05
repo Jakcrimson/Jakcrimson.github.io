@@ -89,13 +89,15 @@ print(results.summary())
 ### Question 2: Deduce from this summary the value of the 4 regression coefficients and the $R^2$.
 
 
-<html>
-<span style='color:green'>Your answer: B1 = 84.5473, B2 =
+<div class="callout callout--answer" markdown="1">
+<span class="callout__label">Answer</span>
+
+<span>Your answer: B1 = 84.5473, B2 =
 1.3150, B3 = 0.4864, B4 = -4.8934 :</span>
 $$O_3= 84.5473 + 1.3150 * T_{12}+ 0.4864 * V_x - 4.8934 * Ne_{12}$$
-<span style='color:green'> The R² is equal to 0.682, the model
+<span> The R² is equal to 0.682, the model
 explains 68% of the total variability of the data (which is not bad) </span>
-</html>
+</div>
  
 ### Question 3: Compute using the formula in class the estimation (non biased) of the std-deviation of the error, i.e. $\hat{\sigma}$. Find this result using the object that comes from your fitted model ( .fit())
 
@@ -113,15 +115,17 @@ print("Result found from the fit() method", results.mse_resid**0.5)
     Result found from the fit() method 13.913257670973184
 
 
-<html>
-<span style='color:green'>Your commentary : The std-deviation
+<div class="callout callout--answer" markdown="1">
+<span class="callout__label">Answer</span>
+
+<span>Your commentary : The std-deviation
 is 13.91 for both methods. In the above table (Question 1) the value <tt>
 F-Statistic</tt> is the value of the test statistic for the
 global Fisher's test, i.e. we\'re testing $H_0:$ all of the
 coefficients are equal to 0. Moreover <tt>
 Prob(F-statistic)</tt> corresponds to the probability to
 observe a statistic greater than the computed <tt>F-statistic</tt></span>
-</html>
+</div>
 
 ### Question 4: Compute using the formula the test statistic of the global Fisher Test and the value of the probability to find a test statistic greater than the computed F-statistic. What do you conclude regarding the null hypothesis ?
 
@@ -145,11 +149,13 @@ print(1-Prob_F_Statistic_Calcule)
     32.86620920917683
     0.007239892209251697
 
-<html>
-<span style='color:green'>Your Commentary : We find the same
+<div class="callout callout--answer" markdown="1">
+<span class="callout__label">Answer</span>
+
+<span>Your Commentary : We find the same
 f-statistic in the summary() which is equal to 32.87 and the reject the
 null hypothesis with a p-value smaller than 5%</span>
-</html>
+</div>
 
  
 
@@ -159,10 +165,12 @@ null hypothesis with a p-value smaller than 5%</span>
 
  - (b) Find the results <tt> t, P\>\|t\|, \[0.025 0.975\]</tt> for the coefficient linked to the variable $T_{12}$ with the formula seen in class. The values <tt> \[0.025 0.975\]</tt> correspond to the trust interval of $\beta_2$ at 95% trust.
 
-<html> 
-<span style='color:green'> Your answer : Given that we reject
+<div class="callout callout--answer" markdown="1">
+<span class="callout__label">Answer</span>
+
+<span> Your answer : Given that we reject
 the null hypothesis, all the coefficients are not equal to 0</span>
-</html>
+</div>
 
 
 ``` python
@@ -213,14 +221,16 @@ print("P-value of the test's statistic :",P_value, \
     2.329867603525416
     P-value of the test's statistic : 0.04013186575767187 We reject the null hypothesis : 'The variable T12 does not add anything to the model'
 
-<html>
-<span style='color:green'>Your commentary : We reject the null
+<div class="callout callout--answer" markdown="1">
+<span class="callout__label">Answer</span>
+
+<span>Your commentary : We reject the null
 hypothesis: \'the variable T12 brings nothing to the model\' at the 5%
 level. We deduce that T12 is important to explain the ozone level. The
 tests are equivalent because their test statistics are very close 2.64
 for the constant alone and 2.33 without T12, the p-values are therefore
 also very close</span>
-</html>
+</div>
 
  
 ## The height of the eucalyptus trees
@@ -229,12 +239,14 @@ also very close</span>
 
 ### Question 7: We will now study the height data of eucalyptus trees. Propose a hypothesis test to decide between the 2 following nested models :
 
-<html>
-    <div style='color:red'> $$ ht=\beta_1+\beta_2 circ +\epsilon$$</div>
-    <div style='color:red'> and </div>
-    <div style='color:red'> $$ ht=\beta_1+\beta_2 circ + \beta_3 \sqrt{circ}+\epsilon$$</div>
-    <div style='color:red'> These 2 models were studied in the previous lab. $ht$ and $circ$ correspond respectively to the height and circumference of the eucalyptus trees.</div>
-</html>
+<div class="callout callout--given" markdown="1">
+<span class="callout__label">Given</span>
+
+<div> $$ ht=\beta_1+\beta_2 circ +\epsilon$$</div>
+    <div> and </div>
+    <div> $$ ht=\beta_1+\beta_2 circ + \beta_3 \sqrt{circ}+\epsilon$$</div>
+    <div> These 2 models were studied in the previous lab. $ht$ and $circ$ correspond respectively to the height and circumference of the eucalyptus trees.</div>
+</div>
 
 ``` python
 data_euc = pd.read_csv("eucalyptus.txt",sep=";") # Import the data
@@ -270,9 +282,11 @@ print("P-value of the test statistic :",P_value, \
     F-statistic : 81.89908388010876
     P-value of the test statistic : 2.0061831358574297e-06 We reject the null hypothesis: 'the sqrtcirc variable does not add anything to the model' (by default the test has a significance level at 5%)
 
-<html>
-<span style='color:green'>Your comment: We conclude that the
+<div class="callout callout--answer" markdown="1">
+<span class="callout__label">Answer</span>
+
+<span>Your comment: We conclude that the
 model with sqrtcirc explains better the variability of the data. This is
 explained by the increase of the R-squared in the second
 model</span>
-</html>
+</div>

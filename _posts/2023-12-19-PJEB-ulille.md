@@ -11,6 +11,10 @@ authors:
   - "Paul-Henri Icher"
 image:
   src: "/assets/posts/pjeb_XSA/header.jpg"
+document:
+  src: "/assets/posts/pjeb_XSA/Rapport_PJE_C.pdf"
+  size: "1.3 MB"
+  id: "rapport-pje-c"
 ---
 # XSA - (X Sentiment Analysis) 📊🐦
 
@@ -30,14 +34,6 @@ Twitter Sentiment Analysis is a fundamental task in Natural Language Processing 
 
 Following is the official report for the project.
 (Translation in English is WIP)
-<html>
-  <body>
-    <iframe src="/assets/posts/pjeb_XSA/Rapport_PJE_C.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
-
-
 ## Contributing 🤝
 
 Contributions are welcome! If you have any suggestions, improvements, or feature requests, feel free to open an issue or create a pull request on the public repository @ (https://github.com/Jakcrimson/pjeb_twitter_sentiment_analysis)

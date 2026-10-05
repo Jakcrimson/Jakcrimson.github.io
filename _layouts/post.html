@@ -27,6 +27,15 @@ layout: default
           {%- endif -%}
           {%- if inst and inst.id != 'independent' %} — {% if inst.url %}<a href="{{ inst.url }}" target="_blank" rel="noopener">{{ inst.name }}</a>{% else %}{{ inst.name }}{% endif %}{% endif %}
           {%- if page.repo %} · <a href="{{ page.repo }}" target="_blank" rel="noopener">Source</a>{% endif %}
+          {%- if site.analytics.goatcounter and site.analytics.goatcounter != '' %}
+          <span class="posthead__stats" id="post-stats" hidden
+                data-gc="{{ site.analytics.goatcounter }}"
+                data-path="{{ page.url }}"
+                {% if page.document %}data-doc-id="{{ page.document.id }}"{% endif %}>
+            <span data-stat="visits" hidden></span>
+            <span data-stat="downloads" hidden></span>
+          </span>
+          {%- endif %}
         </p>
 
         <div class="posthead__foot">
@@ -43,6 +52,10 @@ layout: default
 
       <div class="prose">
         {{ content }}
+
+        {%- if page.document %}
+          {% include document.html doc=page.document title=page.title %}
+        {%- endif %}
       </div>
 
       <footer class="postfoot">

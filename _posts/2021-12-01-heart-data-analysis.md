@@ -9,6 +9,10 @@ lang: fr
 repo: https://github.com/Jakcrimson
 image:
   src: "/assets/posts/stat-heart-data/image.png"
+document:
+  src: "/assets/posts/stat-heart-data/file.pdf"
+  size: "866 KB"
+  id: "file"
 ---
 ## Context
 This project was made during the first semester of the year 2021-2022, supervised by Prof. Salim Lardjane, UBS.
@@ -20,10 +24,3 @@ This project had 2 main goals:
 - leading an in depth statistical analysis and communicate the results
 
 The scripts can be found on my github account.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/stat-heart-data/file.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
