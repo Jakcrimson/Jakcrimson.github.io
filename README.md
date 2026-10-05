@@ -51,6 +51,37 @@ Add it to `_data/taxonomy.yml` under `topics` with an `id`, `label`, `group`
 (`method`, `domain` or `tool`) and a one-line `note`. Its page and its node on
 the map appear as soon as a post uses it.
 
+### Attaching a document
+
+A post whose point is a PDF declares it in front matter rather than pasting an
+`<iframe>` into the body:
+
+```yaml
+document:
+  src: "/assets/posts/regulation/wairo-proposal.pdf"
+  size: "133 KB"
+  id: "wairo-proposal"
+```
+
+The layout renders a download header and the inline viewer. `id` is the event
+path the download counter uses — changing it resets that document's count.
+
+### Visit and download counts
+
+Off by default. To turn them on, create a site at
+[goatcounter.com](https://www.goatcounter.com), enable **Allow adding visitor
+counts to your website** in its settings, and put the site code in
+`_config.yml`:
+
+```yaml
+analytics:
+  goatcounter: your-site-code
+```
+
+Counts then appear in each post's byline. With the field empty, no script loads
+and no third-party request is made. Counts that fail to load render nothing, so
+the figures are a floor rather than a measurement.
+
 ### Adding an institution logo
 
 Drop an SVG into `assets/img/logos/` named after the institution's `id`

@@ -9,6 +9,10 @@ lang: fr
 repo: https://github.com/Jakcrimson
 image:
   src: "/assets/posts/python-machine-learning/header.jpg"
+document:
+  src: "/assets/posts/python-machine-learning/LAGUE_LEFEVRE_RAPPORT.pdf"
+  size: "838 KB"
+  id: "lague-lefevre-rapport"
 ---
 ## Context
 This assignment is part of the final grade for the Python and Machine Learning module taught by Pr. Jacques Froment and Pr. Salim Lardjane (U. of South Brittany).
@@ -18,10 +22,3 @@ The report is in french, it might be translated.
 This assignement had 2 main goals:
  - Familiarize ourselves with the python frameworks for deep learning.
  - Understand the details and structures of the data processed and manipulate the results.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/python-machine-learning/LAGUE_LEFEVRE_RAPPORT.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>

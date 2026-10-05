@@ -9,6 +9,10 @@ lang: en
 featured: true
 image:
   src: "/assets/posts/br/header.jpg"
+document:
+  src: "/assets/posts/regulation/a-moment-to-talk-about-ai.pdf"
+  size: "227 KB"
+  id: "a-moment-to-talk-about-ai"
 ---
 
 A year after the [WAIRO proposal]({{ '/posts/wairo-proposal/' | relative_url }}),
@@ -28,10 +32,3 @@ It closes on four concrete asks: binding synchronised pacing rules,
 early-career seats on scientific advisory bodies, mandatory independent
 technical testimony before votes, and legal protection for researchers who
 speak.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/regulation/a-moment-to-talk-about-ai.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>

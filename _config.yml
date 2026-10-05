@@ -1,12 +1,12 @@
-# ---------------------------------------------------------------------------
+﻿# ---------------------------------------------------------------------------
 # Site configuration
 # ---------------------------------------------------------------------------
 
 title: Pierre Lague
-role: PhD Student — Machine Learning & Statistics
-tagline: PhD Student — Machine Learning & Statistics
+role: PhD Student â€” Machine Learning & Statistics
+tagline: PhD Student â€” Machine Learning & Statistics
 description: >-
-  Pierre Lague — PhD student in machine learning and statistics at Inria,
+  Pierre Lague â€” PhD student in machine learning and statistics at Inria,
   Rennes, working on the mechanical durability of systems subjected to severe
   vibratory loads. Research, teaching and writing.
 
@@ -18,6 +18,12 @@ timezone: Europe/Paris
 
 avatar: /assets/img/portrait.jpg
 
+# Visit and download counts. This is a static site, so the numbers come from
+# GoatCounter â€” no cookies, no cross-site tracking, no personal data retained.
+# Put the site code here (the "xxx" in https://xxx.goatcounter.com) to turn it
+# on. Left empty, no script loads and no third-party request is made.
+analytics:
+  goatcounter:
 github:
   username: Jakcrimson
 

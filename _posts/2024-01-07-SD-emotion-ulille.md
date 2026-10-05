@@ -11,6 +11,10 @@ authors:
   - "François Muller (@franzele21)"
 image:
   src: "/assets/posts/SD-facial-emotion/header.jpeg"
+document:
+  src: "/assets/posts/SD-facial-emotion/LAGUE_MULLER_REPORT.pdf"
+  size: "505 KB"
+  id: "lague-muller-report"
 ---
 # FLEC - Facial Landmark Emotion Classification Project
 
@@ -46,14 +50,6 @@ Our evaluation will provide insights into how well our learning techniques handl
 ## Project Report 🛠️
 
 Following is the official report for the project.
-<html>
-  <body>
-    <iframe src="/assets/posts/SD-facial-emotion/LAGUE_MULLER_REPORT.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
-
-
 ## Contributing 🤝
 
 Contributions are highly encouraged! If you have suggestions, improvements, or feature requests, feel free to open an issue or create a pull request on our [public repository](https://github.com/Jakcrimson/facial_landmark_emotion_classification).

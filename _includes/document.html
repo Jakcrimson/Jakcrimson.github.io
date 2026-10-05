@@ -1,0 +1,36 @@
+{%- comment -%}
+  The attachment on a post: a header carrying the file size and a real download
+  link, then the inline viewer.
+
+  The download link is what makes a download countable — an iframe load is a
+  page view, not a download. Its `data-download` id is the event path sent to
+  the counter, and must stay stable or the count resets.
+{%- endcomment -%}
+
+{%- assign doc = include.doc -%}
+
+<figure class="docbox">
+  <figcaption class="docbox__head">
+    <span class="label">{{ include.label | default: 'Document' }}</span>
+    <span class="docbox__meta">PDF{% if doc.size %} · {{ doc.size }}{% endif %}</span>
+
+    <a class="btn btn--primary docbox__dl"
+       href="{{ doc.src | relative_url }}"
+       download
+       data-download="{{ doc.id }}"
+       data-download-title="{{ include.title | default: page.title | escape }}">
+      Download
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </figcaption>
+
+  <iframe class="docbox__frame"
+          src="{{ doc.src | relative_url }}"
+          title="{{ include.title | default: page.title | escape }} (PDF)"
+          loading="lazy"></iframe>
+
+  <p class="docbox__fallback">
+    If the viewer does not load,
+    <a href="{{ doc.src | relative_url }}" data-download="{{ doc.id }}">open the PDF directly</a>.
+  </p>
+</figure>

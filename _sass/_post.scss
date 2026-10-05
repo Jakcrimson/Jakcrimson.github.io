@@ -182,3 +182,111 @@
 
   &__title { margin-bottom: 0.9rem; }
 }
+
+// -- attachment -------------------------------------------------------------
+//
+// Most posts here are a short note wrapping a full document. The header gives
+// the file its own weight — size, and a download that is a real link rather
+// than a right-click on an embedded viewer.
+.docbox {
+  margin: 2.5rem 0 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--paper-raised);
+  overflow: hidden;
+
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+
+  &__meta {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-faint);
+  }
+
+  &__dl {
+    margin-left: auto;
+    padding-block: 0.4rem;
+  }
+
+  &__frame {
+    display: block;
+    width: 100%;
+    min-height: 78vh;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: var(--paper-sunk);
+  }
+
+  &__fallback {
+    margin: 0;
+    padding: 0.6rem 1rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+}
+
+@media (max-width: 40em) {
+  .docbox__dl { margin-left: 0; }
+  .docbox__frame { min-height: 60vh; }
+}
+
+// -- byline counts ----------------------------------------------------------
+//
+// Hidden until a number actually arrives: a count that failed to load should
+// show nothing, never a zero that reads as "no one came".
+.posthead__stats {
+  &[hidden] { display: none; }
+
+  > [data-stat] {
+    font-variant-numeric: tabular-nums;
+
+    &[hidden] { display: none; }
+
+    &::before {
+      content: "·";
+      margin: 0 0.4rem;
+      color: var(--rule-strong);
+    }
+  }
+}
+
+// -- callouts ---------------------------------------------------------------
+//
+// Answers and given statements in the worked exam posts. The colour lives in
+// the rule rather than the text, so the body keeps full-contrast ink in both
+// themes — the original export hardcoded green and red type, which fails
+// against a dark ground.
+.callout {
+  margin: 1.75rem 0;
+  padding: 0.85rem 0 0.85rem 1.15rem;
+  border-left: 2px solid var(--callout-rule, var(--rule-strong));
+  color: var(--ink-muted);
+
+  &__label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--callout-rule, var(--ink-faint));
+  }
+
+  > :last-child { margin-bottom: 0; }
+
+  &--answer { --callout-rule: #{'var(--accent-answer)'}; }
+  &--given  { --callout-rule: #{'var(--accent-given)'}; }
+}

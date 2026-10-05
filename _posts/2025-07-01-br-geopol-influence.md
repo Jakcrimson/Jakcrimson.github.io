@@ -8,13 +8,10 @@ tags: [finance]
 lang: en
 image:
   src: "/assets/posts/br/header.jpg"
+document:
+  src: "/assets/posts/br/BlackRock___The_Geopolitical_Influence_of_a_P_E__Conglomerate.pdf"
+  size: "101 KB"
+  id: "blackrock-the-geopolitical-influence-of-a-p-e-conglomerate"
 ---
 This page contains a small report I made about BlackRock's geopolitical influence on the world.
 I tried to cite only verified news as recent as I could have them. Any feedback positive, or negative is welcome.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/br/BlackRock___The_Geopolitical_Influence_of_a_P_E__Conglomerate.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>

@@ -1,0 +1,19 @@
+{%- comment -%}
+  Visit and download counting.
+
+  This is a static site, so the numbers have to come from somewhere else.
+  GoatCounter is the one used here: no cookies, no cross-site tracking, no
+  personal data stored, and a public per-path counter endpoint that lets the
+  page read its own count back without an API key.
+
+  Everything is gated on `analytics.goatcounter` in _config.yml. Leave it empty
+  and this include emits nothing at all — no script, no third-party request.
+{%- endcomment -%}
+
+{%- assign gc = site.analytics.goatcounter -%}
+{%- if gc and gc != '' -%}
+  <script
+    data-goatcounter="https://{{ gc }}.goatcounter.com/count"
+    data-goatcounter-settings='{"allow_local": false}'
+    async src="//gc.zgo.at/count.js"></script>
+{%- endif -%}

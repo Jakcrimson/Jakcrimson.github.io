@@ -8,6 +8,10 @@ tags: [ai-governance]
 lang: en
 image:
   src: "/assets/posts/br/header.jpg"
+document:
+  src: "/assets/posts/regulation/wairo-proposal.pdf"
+  size: "133 KB"
+  id: "wairo-proposal"
 ---
 
 A proposal for a **World Artificial Intelligence Regulation Office** — a
@@ -31,10 +35,3 @@ binding.
 
 Written in August 2025, during the MSc. A follow-up written a year later is
 [*A Moment to Talk About AI*]({{ '/posts/a-moment-to-talk-about-ai/' | relative_url }}).
-
-<html>
-  <body>
-    <iframe src="/assets/posts/regulation/wairo-proposal.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>

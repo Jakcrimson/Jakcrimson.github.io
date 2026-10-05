@@ -9,6 +9,10 @@ lang: fr
 featured: true
 image:
   src: "/assets/posts/reviews/phd_logo.png"
+document:
+  src: "/assets/posts/teaching/ml-vers-cnn-cours.pdf"
+  size: "3.8 MB"
+  id: "ml-vers-cnn-cours"
 ---
 
 Course material for **Du Machine Learning aux réseaux convolutifs — CNN, U-Net,
@@ -29,10 +33,3 @@ parameters, a cost function that measures its error, and you descend the
 gradient. CNN, U-Net and VAE are then different choices of model and cost.
 
 The lab sheets are in preparation and will be added here.
-
-<html>
-  <body>
-    <iframe src="/assets/posts/teaching/ml-vers-cnn-cours.pdf" width="100%" height="800px">
-    </iframe>
-  </body>
-</html>
